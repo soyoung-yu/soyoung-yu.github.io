@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#section-hero">MY PORTFOLIO</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#section-about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#section-history">History</a></li>
+          <li class="nav-item"><a class="nav-link" href="#section-portfolio">Portfolio</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section id="section-hero" class="hero-section d-flex align-items-center">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-7 hero-text">
+          <p class="hero-greeting">Hello, I'm</p>
+          <h1 class="hero-name">홍길동</h1>
+          <p class="hero-sub">AND THIS IS MY PORTFOLIO</p>
+          <div class="hero-btns mt-4">
+            <a href="#section-about" class="btn btn-primary me-2">About Me</a>
+            <a href="#section-portfolio" class="btn btn-outline-light">Portfolio</a>
+          </div>
+        </div>
+        <div class="col-lg-5 text-center mt-5 mt-lg-0">
+          <img src="images/profile.jpg" alt="Profile" class="profile-img" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="section-about" class="section-padding bg-light">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <p class="section-subtitle">Developer · Designer · Creator</p>
+
+      <div class="row mt-4">
+        <div class="col-md-6 mb-4">
+          <div class="about-info-box">
+            <p><i class="fab fa-github me-2"></i>Github : <a href="https://github.com/soyoung-yu" target="_blank">Link</a></p>
+            <p><i class="fas fa-blog me-2"></i>Blog : <a href="#" target="_blank">Link</a></p>
+            <p><i class="fas fa-envelope me-2"></i>E-mail : your@email.com</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-2">
+        <!-- Skill 1 -->
+        <div class="col-md-4 mb-4">
+          <div class="skill-card">
+            <div class="skill-icon"><i class="fas fa-chart-bar"></i></div>
+            <h5>Data Science</h5>
+            <ul>
+              <li>데이터 기반 의사결정 (통계 검정)</li>
+              <li>Regression, ML, Deep Learning</li>
+              <li>BeautifulSoup, Selenium 웹 스크래핑</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Skill 2 -->
+        <div class="col-md-4 mb-4">
+          <div class="skill-card">
+            <div class="skill-icon"><i class="fas fa-globe"></i></div>
+            <h5>Web</h5>
+            <ul>
+              <li>HTML, CSS, Bootstrap 활용</li>
+              <li>React / Vue.js 프론트엔드 개발</li>
+              <li>Node.js / Django 백엔드 개발</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Skill 3 -->
+        <div class="col-md-4 mb-4">
+          <div class="skill-card">
+            <div class="skill-icon"><i class="fas fa-code"></i></div>
+            <h5>Programming</h5>
+            <ul>
+              <li><strong>Skilled :</strong> Python, JavaScript</li>
+              <li><strong>Familiar :</strong> Java, C++</li>
+              <li><strong>DB :</strong> MySQL, MongoDB</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HISTORY ===== -->
+  <section id="section-history" class="section-padding">
+    <div class="container">
+      <h2 class="section-title">History</h2>
+
+      <!-- Education -->
+      <h4 class="history-category mt-5"><i class="fas fa-graduation-cap me-2"></i>Education</h4>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">2015.03 – 2021.02</div>
+          <div class="timeline-content">
+            <h5>○○대학교</h5>
+            <p>컴퓨터공학 전공</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Career -->
+      <h4 class="history-category mt-5"><i class="fas fa-briefcase me-2"></i>Career</h4>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">2022.01 – 현재</div>
+          <div class="timeline-content">
+            <h5>○○ 회사</h5>
+            <p>Position : 개발자</p>
+            <p>Work : 서비스 개발 및 유지보수</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2021.01 – 2021.12</div>
+          <div class="timeline-content">
+            <h5>○○ 스타트업</h5>
+            <p>Position : 인턴</p>
+            <p>Work : 데이터 분석 및 백엔드 개발</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Experience -->
+      <h4 class="history-category mt-5"><i class="fas fa-star me-2"></i>Experience</h4>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">2021.01 – 2021.12</div>
+          <div class="timeline-content">
+            <h5>○○ 부트캠프</h5>
+            <p>웹 개발 및 알고리즘 교육 수료</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2020.07 – 2020.08</div>
+          <div class="timeline-content">
+            <h5>○○ 강의</h5>
+            <p>Python 기초 문법 강의 진행</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PORTFOLIO ===== -->
+  <section id="section-portfolio" class="section-padding bg-light">
+    <div class="container">
+      <h2 class="section-title">Featured Portfolio</h2>
+      <p class="section-subtitle">(Click images to show details)</p>
+
+      <!-- Filter Buttons -->
+      <div class="portfolio-filter text-center my-4">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="data-analysis">Data-Analysis</button>
+        <button class="filter-btn" data-filter="web-application">Web-Application</button>
+        <button class="filter-btn" data-filter="others">Others</button>
+      </div>
+
+      <!-- Portfolio Grid -->
+      <div class="row" id="portfolio-grid">
+
+        <div class="col-md-4 col-sm-6 mb-4 portfolio-item" data-category="web-application">
+          <div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#modal1">
+            <img src="images/portfolio1.png" alt="프로젝트 1" />
+            <div class="portfolio-overlay">
+              <span class="portfolio-tag">WEB-APPLICATION</span>
+              <h6>영화 추천 사이트</h6>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6 mb-4 portfolio-item" data-category="web-application">
+          <div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#modal2">
+            <img src="images/portfolio2.png" alt="프로젝트 2" />
+            <div class="portfolio-overlay">
+              <span class="portfolio-tag">WEB-APPLICATION</span>
+              <h6>문장 성별 분류 사이트</h6>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6 mb-4 portfolio-item" data-category="data-analysis">
+          <div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#modal3">
+            <img src="images/portfolio3.png" alt="프로젝트 3" />
+            <div class="portfolio-overlay">
+              <span class="portfolio-tag">DATA-ANALYSIS</span>
+              <h6>데이터 분석 프로젝트</h6>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6 mb-4 portfolio-item" data-category="data-analysis">
+          <div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#modal4">
+            <img src="images/portfolio4.png" alt="프로젝트 4" />
+            <div class="portfolio-overlay">
+              <span class="portfolio-tag">DATA-ANALYSIS</span>
+              <h6>머신러닝 경진대회</h6>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6 mb-4 portfolio-item" data-category="data-analysis">
+          <div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#modal5">
+            <img src="images/portfolio5.png" alt="프로젝트 5" />
+            <div class="portfolio-overlay">
+              <span class="portfolio-tag">DATA-ANALYSIS</span>
+              <h6>주가 예측 알고리즘</h6>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6 mb-4 portfolio-item" data-category="others">
+          <div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#modal6">
+            <img src="images/portfolio6.png" alt="프로젝트 6" />
+            <div class="portfolio-overlay">
+              <span class="portfolio-tag">OTHERS</span>
+              <h6>기타 프로젝트</h6>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PORTFOLIO MODALS ===== -->
+  <div class="modal fade" id="modal1" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">영화 추천 사이트</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <img src="images/portfolio1.png" class="img-fluid mb-3" alt="프로젝트 1" />
+          <p><strong>기술 스택 :</strong> Python, Django, Bootstrap</p>
+          <p><strong>설명 :</strong> 사용자 취향 기반 영화 추천 웹 서비스입니다.</p>
+          <a href="#" target="_blank" class="btn btn-sm btn-primary">GitHub 링크</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal2" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">문장 성별 분류 사이트</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <img src="images/portfolio2.png" class="img-fluid mb-3" alt="프로젝트 2" />
+          <p><strong>기술 스택 :</strong> Python, NLP, Flask</p>
+          <p><strong>설명 :</strong> 텍스트 입력으로 작성자 성별을 분류하는 NLP 프로젝트입니다.</p>
+          <a href="#" target="_blank" class="btn btn-sm btn-primary">GitHub 링크</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal3" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">데이터 분석 프로젝트</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <img src="images/portfolio3.png" class="img-fluid mb-3" alt="프로젝트 3" />
+          <p><strong>기술 스택 :</strong> Python, Pandas, Matplotlib</p>
+          <p><strong>설명 :</strong> 공공 데이터를 활용한 탐색적 데이터 분석 프로젝트입니다.</p>
+          <a href="#" target="_blank" class="btn btn-sm btn-primary">GitHub 링크</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal4" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">머신러닝 경진대회</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <img src="images/portfolio4.png" class="img-fluid mb-3" alt="프로젝트 4" />
+          <p><strong>기술 스택 :</strong> Python, Scikit-learn, XGBoost</p>
+          <p><strong>설명 :</strong> Kaggle / Dacon 머신러닝 경진대회 참가 프로젝트입니다.</p>
+          <a href="#" target="_blank" class="btn btn-sm btn-primary">GitHub 링크</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal5" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">주가 예측 알고리즘</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <img src="images/portfolio5.png" class="img-fluid mb-3" alt="프로젝트 5" />
+          <p><strong>기술 스택 :</strong> Python, LSTM, TensorFlow</p>
+          <p><strong>설명 :</strong> LSTM 기반 주가 예측 딥러닝 모델 구현 프로젝트입니다.</p>
+          <a href="#" target="_blank" class="btn btn-sm btn-primary">GitHub 링크</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal6" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">기타 프로젝트</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <img src="images/portfolio6.png" class="img-fluid mb-3" alt="프로젝트 6" />
+          <p><strong>기술 스택 :</strong> 다양한 기술</p>
+          <p><strong>설명 :</strong> 기타 개인 프로젝트 및 활동입니다.</p>
+          <a href="#" target="_blank" class="btn btn-sm btn-primary">GitHub 링크</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer-section text-center">
+    <div class="container">
+      <div class="footer-icons mb-3">
+        <a href="https://github.com/soyoung-yu" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.youtube.com/@yourchannel" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="mailto:your@email.com"><i class="fas fa-envelope"></i></a>
+      </div>
+      <p class="footer-copy">© 2026 홍길동. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
