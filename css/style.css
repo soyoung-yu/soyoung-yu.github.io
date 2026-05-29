@@ -449,6 +449,8 @@ body {
 .portfolio-modal-body {
   padding: 28px 32px;
   background: #fff;
+  max-height: 60vh;
+  overflow-y: auto;
 }
 
 .portfolio-modal-info {
