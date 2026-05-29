@@ -308,6 +308,18 @@ body {
   margin-left: 6px;
 }
 
+.timeline-duration {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: #888;
+  background: #f4f6fa;
+  border: 1px solid #dde3ee;
+  border-radius: 20px;
+  padding: 1px 9px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
 /* ===========================
    Portfolio
 =========================== */

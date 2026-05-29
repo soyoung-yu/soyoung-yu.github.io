@@ -59,31 +59,46 @@ document.querySelectorAll('.skill-card, .timeline-item, .portfolio-item').forEac
 });
 
 // ===========================
-// 총 경력 기간 자동 계산
+// 경력 기간 자동 계산
 // ===========================
 (function () {
-  const periods = [
-    { start: [2021, 2], end: [2021, 9] },
-    { start: [2021, 9], end: [2025, 1] },
-    { start: [2025, 2], end: null }, // 재직 중
-  ];
-
   const now = new Date();
   const curYear = now.getFullYear();
   const curMonth = now.getMonth() + 1;
 
-  let totalMonths = 0;
-  periods.forEach(({ start, end }) => {
-    const [ey, em] = end ? end : [curYear, curMonth];
-    totalMonths += (ey - start[0]) * 12 + (em - start[1]);
+  function monthsBetween(startStr, endStr) {
+    const [sy, sm] = startStr.split('-').map(Number);
+    const [ey, em] = endStr ? endStr.split('-').map(Number) : [curYear, curMonth];
+    return (ey - sy) * 12 + (em - sm);
+  }
+
+  function formatDuration(months) {
+    const y = Math.floor(months / 12);
+    const m = months % 12;
+    if (y > 0 && m > 0) return `${y}년 ${m}개월`;
+    if (y > 0) return `${y}년`;
+    return `${m}개월`;
+  }
+
+  // 각 회사 재직 기간 표시
+  document.querySelectorAll('.career-timeline .timeline-item').forEach(item => {
+    const start = item.dataset.start;
+    const end = item.dataset.end || null;
+    const badge = item.querySelector('.timeline-duration');
+    if (start && badge) {
+      badge.textContent = formatDuration(monthsBetween(start, end));
+    }
   });
 
-  const years = Math.floor(totalMonths / 12);
-  const months = totalMonths % 12;
-  const label = `총 ${years}년${months > 0 ? ' ' + months + '개월' : ''}`;
-
-  const badge = document.querySelector('.history-total');
-  if (badge) badge.textContent = label;
+  // 총 경력 계산
+  const periods = [
+    { start: '2021-02', end: '2021-09' },
+    { start: '2021-09', end: '2025-01' },
+    { start: '2025-02', end: null },
+  ];
+  const total = periods.reduce((sum, { start, end }) => sum + monthsBetween(start, end), 0);
+  const totalBadge = document.querySelector('.history-total');
+  if (totalBadge) totalBadge.textContent = `총 ${formatDuration(total)}`;
 })();
 
 // ===========================
