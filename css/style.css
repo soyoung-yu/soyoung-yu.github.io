@@ -393,26 +393,130 @@ body {
 /* ===========================
    Modal
 =========================== */
-.modal-content {
-  border-radius: 14px;
+.portfolio-modal-content {
   border: none;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.25);
 }
 
-.modal-header {
-  border-bottom: 1px solid #eee;
-  padding: 20px 24px;
+.portfolio-modal-header {
+  background: #4a90e2;
+  padding: 28px 32px 24px;
+  position: relative;
 }
 
-.modal-body {
-  padding: 24px;
+.portfolio-modal-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.75);
+  text-transform: uppercase;
+  margin-bottom: 8px;
 }
 
-.modal-body img {
-  border-radius: 8px;
-  width: 100%;
-  max-height: 320px;
-  object-fit: cover;
+.portfolio-modal-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  padding-right: 40px;
+}
+
+.portfolio-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: #fff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-size: 0.85rem;
+}
+
+.portfolio-modal-close:hover {
+  background: rgba(255,255,255,0.35);
+}
+
+.portfolio-modal-body {
+  padding: 28px 32px;
+  background: #fff;
+}
+
+.portfolio-modal-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.portfolio-modal-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.info-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #4a90e2;
+}
+
+.info-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-tag {
+  background: #eef4fc;
+  color: #4a90e2;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 4px 14px;
+  border-radius: 20px;
+  border: 1px solid #c8ddf5;
+}
+
+.info-desc {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.portfolio-modal-footer {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.portfolio-modal-btn {
+  display: inline-flex;
+  align-items: center;
+  background: #4a90e2;
+  color: #fff;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 9px 22px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.portfolio-modal-btn:hover {
+  background: #357abd;
+  color: #fff;
+  transform: translateY(-1px);
 }
 
 /* ===========================
