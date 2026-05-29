@@ -89,7 +89,7 @@ body {
   overflow: hidden;
 }
 
-/* 배경 이미지를 img 태그로 제어 */
+/* 배경 이미지 */
 .hero-bg-img {
   position: absolute;
   inset: 0;
@@ -100,18 +100,19 @@ body {
   z-index: 0;
 }
 
-/* 배경 이미지 위에 네이비 오버레이 */
+/* 네이비 오버레이 */
 .hero-section::before {
   content: '';
   position: absolute;
   inset: 0;
   background: rgba(20, 20, 40, 0.45);
-  z-index: 0;
+  z-index: 1;
 }
 
+/* 텍스트 컨테이너 */
 .hero-section .container {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .hero-greeting {
