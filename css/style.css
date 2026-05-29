@@ -574,6 +574,20 @@ body {
   letter-spacing: 0.2px;
 }
 
+/* 소제목 하위 레이블 (수작업 KPI 데이터, 시스템 DB 등) */
+.info-sub-label {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: #3a3a3a;
+  margin: 8px 0 2px;
+}
+
+/* 중첩 리스트 */
+.info-list ul {
+  margin-top: 4px;
+  padding-left: 18px;
+}
+
 /* 불릿 리스트 */
 .info-list {
   margin: 0;
