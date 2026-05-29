@@ -20,14 +20,14 @@ const portfolioItems = document.querySelectorAll('.portfolio-item');
 
 filterBtns.forEach(btn => {
   btn.addEventListener('click', () => {
-    // 활성 버튼 변경
     filterBtns.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
 
     const filter = btn.dataset.filter;
 
     portfolioItems.forEach(item => {
-      if (filter === 'all' || item.dataset.category === filter) {
+      const categories = item.dataset.category.split(' ');
+      if (filter === 'all' || categories.includes(filter)) {
         item.classList.remove('hidden');
       } else {
         item.classList.add('hidden');

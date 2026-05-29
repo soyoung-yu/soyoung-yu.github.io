@@ -362,6 +362,14 @@ body {
   background: rgba(20, 30, 60, 0.82);
 }
 
+.portfolio-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
 .portfolio-tag {
   font-size: 0.72rem;
   font-weight: 700;
