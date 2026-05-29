@@ -64,7 +64,7 @@ document.querySelectorAll('.skill-card, .timeline-item, .portfolio-item').forEac
 (function () {
   const periods = [
     { start: [2021, 2], end: [2021, 9] },
-    { start: [2021, 9], end: [2025, 2] },
+    { start: [2021, 9], end: [2025, 1] },
     { start: [2025, 2], end: null }, // 재직 중
   ];
 
