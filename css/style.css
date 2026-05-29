@@ -347,19 +347,19 @@ body {
 .portfolio-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(20, 30, 60, 0.75);
+  background: rgba(20, 30, 60, 0.55);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s;
+  opacity: 1;
+  transition: background 0.3s;
   padding: 16px;
   text-align: center;
 }
 
 .portfolio-card:hover .portfolio-overlay {
-  opacity: 1;
+  background: rgba(20, 30, 60, 0.82);
 }
 
 .portfolio-tag {
