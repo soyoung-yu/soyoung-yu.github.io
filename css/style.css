@@ -473,21 +473,37 @@ body {
 .portfolio-modal-info {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 28px;
 }
 
 .portfolio-modal-info-item {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
+/* 섹션 구분선 */
+.portfolio-modal-info-item + .portfolio-modal-info-item {
+  padding-top: 4px;
+  border-top: 1px solid #f0f4fa;
+}
+
+/* 섹션 헤더 */
 .info-label {
-  font-size: 0.92rem;
-  font-weight: 700;
-  letter-spacing: 0.5px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 2px;
   text-transform: uppercase;
   color: #4a90e2;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding-bottom: 8px;
+  border-bottom: 1.5px solid #deeaf9;
+}
+
+.info-label i {
+  font-size: 0.8rem;
 }
 
 .info-tags {
@@ -506,43 +522,116 @@ body {
   border: 1px solid #c8ddf5;
 }
 
+/* 본문 텍스트 기본 */
 .info-desc {
-  font-size: 0.95rem;
-  font-weight: 300;
-  color: #333;
-  line-height: 1.85;
+  font-size: 0.93rem;
+  font-weight: 400;
+  color: #3d3d3d;
+  line-height: 1.95;
   margin: 0;
 }
 
-.info-subtitle {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: #333;
-  margin: 4px 0 0;
+/* 첫 요약 문단 강조 */
+.desc-lead {
+  font-size: 0.96rem;
+  font-weight: 500;
+  color: #1a2f4a;
+  line-height: 2;
+  margin: 0;
+  padding: 14px 18px;
+  background: #f6f9fe;
+  border-left: 4px solid #4a90e2;
+  border-radius: 0 8px 8px 0;
 }
 
+/* 수치·성과 강조 */
+.stat-em {
+  color: #3278cc;
+  font-weight: 700;
+}
+
+/* 배경·목표 하이라이트 박스 */
+.goal-box {
+  background: #f2f7ff;
+  border: 1px solid #d4e6f8;
+  border-radius: 10px;
+  padding: 16px 20px;
+  font-size: 0.93rem;
+  font-weight: 400;
+  color: #24406a;
+  line-height: 1.9;
+  margin: 0;
+}
+
+/* 소제목 (데이터 수집, EDA 등) */
+.info-subtitle {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #1a2f4a;
+  margin: 10px 0 2px;
+  padding-left: 11px;
+  border-left: 3px solid #4a90e2;
+  letter-spacing: 0.2px;
+}
+
+/* 불릿 리스트 */
 .info-list {
   margin: 0;
   padding-left: 20px;
-  color: #333;
-  font-size: 0.94rem;
-  font-weight: 300;
-  line-height: 1.85;
+  color: #3d3d3d;
+  font-size: 0.91rem;
+  font-weight: 400;
+  line-height: 1.9;
 }
 
 .info-list li {
-  margin-bottom: 5px;
+  margin-bottom: 6px;
 }
 
+/* 인사이트 콜아웃 */
 .insight-callout {
-  background: #f5f9fe;
+  background: #f0f7ff;
   border-left: 4px solid #4a90e2;
-  color: #2d4f73;
-  font-size: 0.92rem;
+  color: #1a3a5c;
+  font-size: 0.91rem;
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.85;
+  margin: 2px 0 10px;
+  padding: 12px 16px;
+  border-radius: 0 6px 6px 0;
+}
+
+/* 액션 아이템 리스트 */
+.action-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.action-list li {
+  position: relative;
+  padding: 12px 16px 12px 40px;
+  background: #f8fbff;
+  border: 1px solid #dceaf8;
+  border-radius: 8px;
+  font-size: 0.91rem;
   font-weight: 400;
+  color: #2c3e50;
   line-height: 1.8;
-  margin: 4px 0 12px;
-  padding: 10px 14px;
+}
+
+.action-list li::before {
+  content: '→';
+  position: absolute;
+  left: 15px;
+  top: 13px;
+  color: #4a90e2;
+  font-weight: 800;
+  font-size: 0.9rem;
 }
 
 .portfolio-modal-footer {
