@@ -91,6 +91,15 @@ body {
   padding-top: 80px;
 }
 
+/* 배경 이미지 위에 네이비 오버레이 */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 20, 40, 0.45);
+  z-index: 0;
+}
+
 .hero-section .container {
   position: relative;
   z-index: 1;
