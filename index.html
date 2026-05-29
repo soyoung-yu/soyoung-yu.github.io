@@ -3,14 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
+  <meta name="description" content="유소영의 데이터 분석 및 LLM 프로젝트 포트폴리오" />
+  <title>유소영 Portfolio</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314142a'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-family='Arial,sans-serif' font-size='24' font-weight='700' fill='%234a90e2'%3EYS%3C/text%3E%3C/svg%3E" />
   <link rel="stylesheet" href="css/style.css" />
   <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&amp;family=Montserrat:wght@400;600;700&amp;display=swap" rel="stylesheet" />
 </head>
 <body>
 
@@ -18,7 +20,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
       <a class="navbar-brand fw-bold" href="#section-hero">MY PORTFOLIO</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -49,7 +51,7 @@
   <section id="section-about" class="section-padding bg-light">
     <div class="container">
       <h2 class="section-title">About Me</h2>
-      <p class="section-subtitle">Developer · Designer · Creator</p>
+      <p class="section-subtitle">Data Analyst · Designer · Creator</p>
 
       <div class="text-center my-4">
         <img src="images/profile.jpeg" alt="Profile" class="profile-img" />
@@ -58,8 +60,8 @@
       <div class="row mt-4">
         <div class="col-12 mb-4">
           <div class="about-info-box">
-            <p><i class="fab fa-github me-2"></i>Github : <a href="https://github.com/soyoung-yu" target="_blank">Link</a></p>
-            <p><i class="fas fa-blog me-2"></i>Blog : <a href="#" target="_blank">Link</a></p>
+            <p><i class="fab fa-github me-2"></i>Github : <a href="https://github.com/soyoung-yu" target="_blank" rel="noopener noreferrer">Link</a></p>
+            <p><i class="fas fa-blog me-2"></i>Blog : 준비 중</p>
             <p><i class="fas fa-envelope me-2"></i>E-mail : syy7201@gmail.com</p>
           </div>
         </div>
@@ -111,54 +113,13 @@
     <div class="container">
       <h2 class="section-title">History</h2>
 
-      <!-- Education -->
-      <h4 class="history-category mt-5"><i class="fas fa-graduation-cap me-2"></i>Education</h4>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-date">2015.03 – 2021.02</div>
-          <div class="timeline-content">
-            <h5>○○대학교</h5>
-            <p>컴퓨터공학 전공</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Career -->
-      <h4 class="history-category mt-5"><i class="fas fa-briefcase me-2"></i>Career</h4>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-date">2022.01 – 현재</div>
-          <div class="timeline-content">
-            <h5>○○ 회사</h5>
-            <p>Position : 개발자</p>
-            <p>Work : 서비스 개발 및 유지보수</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-date">2021.01 – 2021.12</div>
-          <div class="timeline-content">
-            <h5>○○ 스타트업</h5>
-            <p>Position : 인턴</p>
-            <p>Work : 데이터 분석 및 백엔드 개발</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Experience -->
       <h4 class="history-category mt-5"><i class="fas fa-star me-2"></i>Experience</h4>
       <div class="timeline">
         <div class="timeline-item">
-          <div class="timeline-date">2021.01 – 2021.12</div>
+          <div class="timeline-date">업데이트 예정</div>
           <div class="timeline-content">
-            <h5>○○ 부트캠프</h5>
-            <p>웹 개발 및 알고리즘 교육 수료</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-date">2020.07 – 2020.08</div>
-          <div class="timeline-content">
-            <h5>○○ 강의</h5>
-            <p>Python 기초 문법 강의 진행</p>
+            <h5>이력 정보 정리 중</h5>
+            <p>교육, 경력, 대외활동 정보를 업데이트할 예정입니다.</p>
           </div>
         </div>
       </div>
@@ -177,8 +138,6 @@
         <button class="filter-btn" data-filter="insight">Insight</button>
         <button class="filter-btn" data-filter="llm">LLM</button>
         <button class="filter-btn" data-filter="analysis">Analysis</button>
-        <button class="filter-btn" data-filter="web-application">Web-Application</button>
-        <button class="filter-btn" data-filter="others">Others</button>
       </div>
 
       <!-- Portfolio Grid -->
@@ -218,36 +177,14 @@
           </div>
         </div>
 
-        <div class="col-md-4 col-sm-6 mb-4 portfolio-item" data-category="LLM analysis">
+        <div class="col-md-4 col-sm-6 mb-4 portfolio-item" data-category="llm analysis">
           <div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#modal4" style="background-image: url('images/portfolio4.png'); background-size: cover; background-position: center;">
             <div class="portfolio-overlay">
               <div class="portfolio-tags">
                 <span class="portfolio-tag">LLM</span>
                 <span class="portfolio-tag">Analysis</span>
               </div>
-              <h6>LLM & vector 유사도 기반 자료 검색 구조 설계</h6>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 col-sm-6 mb-4 portfolio-item" data-category="data-analysis">
-          <div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#modal5">
-            <div class="portfolio-overlay">
-              <div class="portfolio-tags">
-                <span class="portfolio-tag">DATA-ANALYSIS</span>
-              </div>
-              <h6>주가 예측 알고리즘</h6>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 col-sm-6 mb-4 portfolio-item" data-category="others">
-          <div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#modal6">
-            <div class="portfolio-overlay">
-              <div class="portfolio-tags">
-                <span class="portfolio-tag">OTHERS</span>
-              </div>
-              <h6>기타 프로젝트</h6>
+              <h6>LLM &amp; vector 유사도 기반 자료 검색 구조 설계</h6>
             </div>
           </div>
         </div>
@@ -263,7 +200,7 @@
         <div class="portfolio-modal-header">
           <div class="portfolio-modal-tag">Insight</div>
           <h4 class="portfolio-modal-title">비즈니스 인사이트 리포트</h4>
-          <button type="button" class="portfolio-modal-close" data-bs-dismiss="modal"><i class="fas fa-times"></i></button>
+          <button type="button" class="portfolio-modal-close" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
         </div>
         <div class="portfolio-modal-body">
           <div class="portfolio-modal-info">
@@ -271,37 +208,85 @@
               <span class="info-label"><i class="fas fa-layer-group me-2"></i>기술 스택</span>
               <div class="info-tags">
                 <span class="tech-tag">Python</span>
-                <span class="tech-tag">Django</span>
-                <span class="tech-tag">Bootstrap</span>
+                <span class="tech-tag">SQL</span>
+                <span class="tech-tag">AWS Bedrock</span>
+                <span class="tech-tag">LLM</span>
+                <span class="tech-tag">Codex</span>
+                <span class="tech-tag">Claude Code</span>
+                <span class="tech-tag">Figma</span>
               </div>
             </div>
             <div class="portfolio-modal-info-item">
               <span class="info-label"><i class="fas fa-align-left me-2"></i>프로젝트 설명</span>
-              <p class="info-desc">사용자 취향 기반 영화 추천 웹 서비스입니다.</p>
+              <p class="info-desc">사내 데이터 서비스 이용률이 저조한 문제를 분석하는 과정에서, 서비스 자체의 기능이나 품질보다 직원들의 데이터 활용 경험 부족이 근본 원인이라고 판단했습니다. 이에 데이터를 단순히 제공하는 방식에서 벗어나, 실제 업무에 적용 가능한 인사이트를 전달함으로써 직원들의 데이터 활용 경험을 확대하고자 정기 인사이트 리포트 발행 프로젝트를 기획했습니다.</p>
+              <p class="info-desc">리포트는 매 회차 서로 다른 비즈니스 주제를 선정하여 외부 시장 데이터와 사내 연구·생산 데이터를 분석하는 방식으로 제작했으며, 비전문가도 쉽게 이해할 수 있도록 차트 설계와 인사이트 해석에 집중했습니다. 또한 단순 분석 결과 나열이 아닌 하나의 스토리라인을 기반으로 구성하여 데이터가 자연스럽게 의사결정으로 연결될 수 있도록 설계했습니다.</p>
+              <p class="info-desc">총 12회의 리포트를 제작·배포했으며, 배포 후 3일 평균 조회수 100회 이상을 기록했습니다. 추가 데이터 분석 요청은 기존 대비 약 4배, 신규 대시보드 구축 요청은 약 2배 증가하는 성과를 달성했고, 직원들의 데이터 활용 경험 확대와 데이터 기반 의사결정 문화 형성에 기여했습니다.</p>
             </div>
             <div class="portfolio-modal-info-item">
               <span class="info-label"><i class="fas fa-bullseye me-2"></i>배경 및 목표</span>
-              <p class="info-desc">-</p>
+              <p class="info-desc">사내 직원들의 데이터 활용 경험을 유도하기 위해 현업에 바로 적용할 수 있는 인사이트를 포함한 분석 리포트를 정기적으로 배포했습니다.</p>
             </div>
             <div class="portfolio-modal-info-item">
               <span class="info-label"><i class="fas fa-database me-2"></i>데이터 수집 및 전처리</span>
-              <p class="info-desc">-</p>
+              <h6 class="info-subtitle">데이터 수집</h6>
+              <ul class="info-list">
+                <li>외부 구매 데이터: 제품 메타데이터, 제품 판매·인기 랭킹 데이터, 소비자 리뷰 데이터</li>
+                <li>사내 DB: 화장품 연구 개발 데이터, 의뢰 및 생산 데이터</li>
+              </ul>
+              <h6 class="info-subtitle">전처리</h6>
+              <ul class="info-list">
+                <li>동일 제품의 수집 시점별 정보 중 최신 데이터를 기준으로 제품 메타데이터 구성</li>
+                <li>중복 리뷰 데이터를 제거하여 리뷰 수와 키워드 빈도 왜곡 방지</li>
+                <li>리뷰 수, 평균 평점, 평균 랭킹 등 제품 단위 분석 지표 생성</li>
+                <li>옵션, 용량 차이로 분리된 동일 제품 통합</li>
+                <li>담당 연구팀 정보 매핑 및 내부 제형 카테고리와 외부 뷰티 플랫폼 카테고리 매칭</li>
+                <li>의뢰 정보와 생산 실적 데이터를 조인하여 제품 흐름 추적</li>
+              </ul>
             </div>
             <div class="portfolio-modal-info-item">
               <span class="info-label"><i class="fas fa-flask me-2"></i>분석 방법론</span>
-              <p class="info-desc">-</p>
+              <h6 class="info-subtitle">탐색적 데이터 분석</h6>
+              <ul class="info-list">
+                <li>Python, SQL을 활용해 분석 목적에 맞는 데이터 마트 설계</li>
+                <li>제형, 브랜드, 제조사 등의 관점에서 데이터 분포 및 특성 파악</li>
+                <li>리뷰 수, 랭킹, 점유율, 성장률, 시계열 추세 등 주요 지표 분석</li>
+              </ul>
+              <h6 class="info-subtitle">LLM 프롬프트 기반 텍스트 분류</h6>
+              <ul class="info-list">
+                <li>비정형 리뷰 데이터 분석을 위해 입출력 포맷과 분석 기준을 정의한 프롬프트 설계</li>
+                <li>리뷰 내 분석 대상 자동 분류: 예를 들어 립앤치크 리뷰에서 립 사용 경험과 치크 사용 경험 리뷰를 분리</li>
+              </ul>
+              <h6 class="info-subtitle">AI Agent 활용</h6>
+              <ul class="info-list">
+                <li>대용량 데이터 전처리 및 가공을 위한 코드 초안 생성에 AI Agent 활용</li>
+                <li>생성된 코드를 검증 및 수정하여 분석 파이프라인에 적용</li>
+              </ul>
             </div>
             <div class="portfolio-modal-info-item">
               <span class="info-label"><i class="fas fa-chart-line me-2"></i>분석 결과 및 인사이트</span>
-              <p class="info-desc">-</p>
+              <h6 class="info-subtitle">선케어 세부 제형 트렌드 분석</h6>
+              <ul class="info-list">
+                <li>선케어 시장이 선크림·선스틱 중심에서 선세럼, 선젤, 선파우더 등 세분화된 제형으로 확대되고 있음을 확인</li>
+                <li>선세럼이 선쿠션을 제치며 선크림, 선스틱 다음으로 제품 수 기준 3위를 차지</li>
+                <li>다른 제조사에 비해 자사의 선세럼이 랭킹, 리뷰 기준으로 상위권에 위치</li>
+              </ul>
+              <p class="insight-callout">선케어 약세 속에서도 선세럼은 자사가 시장을 주도하고 있는 전략 제형으로 판단했습니다.</p>
+
+              <h6 class="info-subtitle">립앤치크 리뷰 분석</h6>
+              <ul class="info-list">
+                <li>"립앤치크는 립과 치크 모두를 만족시키는 멀티 제형으로 기능하고 있는가?"라는 가설에서 출발</li>
+                <li>립 관련 리뷰의 부정 비율은 약 30%로, 치크 관련 리뷰의 부정 비율 17% 대비 높게 나타남</li>
+                <li>립에 대한 부정 리뷰는 발림성과 지속력 항목에서 주로 발생</li>
+              </ul>
+              <p class="insight-callout">현재 립앤치크 시장은 립보다 치크 사용 경험 최적화에 상대적으로 집중되어 있는 것으로 판단했습니다.</p>
             </div>
             <div class="portfolio-modal-info-item">
               <span class="info-label"><i class="fas fa-lightbulb me-2"></i>비즈니스 제안 및 액션 아이템</span>
-              <p class="info-desc">-</p>
+              <ul class="info-list">
+                <li>선세럼은 선케어 시장에서 자사가 강점을 보유한 전략 제형으로 판단되며, 선케어 시장 공략 시 핵심 카테고리로 활용이 필요합니다.</li>
+                <li>립앤치크 제품 개발 시 립 사용 시의 발림성 및 지속력 개선이 주요 차별화 포인트가 될 수 있습니다.</li>
+              </ul>
             </div>
-          </div>
-          <div class="portfolio-modal-footer">
-            <a href="#" target="_blank" class="portfolio-modal-btn"><i class="fab fa-github me-2"></i>GitHub</a>
           </div>
         </div>
       </div>
@@ -314,7 +299,7 @@
         <div class="portfolio-modal-header">
           <div class="portfolio-modal-tag">LLM · Analysis</div>
           <h4 class="portfolio-modal-title">LLM 기반 Formulation 자동화</h4>
-          <button type="button" class="portfolio-modal-close" data-bs-dismiss="modal"><i class="fas fa-times"></i></button>
+          <button type="button" class="portfolio-modal-close" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
         </div>
         <div class="portfolio-modal-body">
           <div class="portfolio-modal-info">
@@ -322,37 +307,34 @@
               <span class="info-label"><i class="fas fa-layer-group me-2"></i>기술 스택</span>
               <div class="info-tags">
                 <span class="tech-tag">Python</span>
-                <span class="tech-tag">NLP</span>
-                <span class="tech-tag">Flask</span>
+                <span class="tech-tag">LLM</span>
+                <span class="tech-tag">Automation</span>
               </div>
             </div>
             <div class="portfolio-modal-info-item">
               <span class="info-label"><i class="fas fa-align-left me-2"></i>프로젝트 설명</span>
-              <p class="info-desc">텍스트 입력으로 작성자 성별을 분류하는 NLP 프로젝트입니다.</p>
+              <p class="info-desc">LLM을 활용해 formulation 관련 작업 흐름을 자동화하는 구조를 설계한 프로젝트입니다.</p>
             </div>
             <div class="portfolio-modal-info-item">
               <span class="info-label"><i class="fas fa-bullseye me-2"></i>배경 및 목표</span>
-              <p class="info-desc">-</p>
+              <p class="info-desc">반복적인 문서 해석과 작성 과정을 줄이고, 입력 조건에 맞는 결과 생성을 안정화하는 것을 목표로 했습니다.</p>
             </div>
             <div class="portfolio-modal-info-item">
               <span class="info-label"><i class="fas fa-database me-2"></i>데이터 수집 및 전처리</span>
-              <p class="info-desc">-</p>
+              <p class="info-desc">업무 문서와 입력 조건을 분석해 프롬프트와 출력 형식을 정리했습니다.</p>
             </div>
             <div class="portfolio-modal-info-item">
               <span class="info-label"><i class="fas fa-flask me-2"></i>분석 방법론</span>
-              <p class="info-desc">-</p>
+              <p class="info-desc">LLM 프롬프트 설계, 결과 검증, 예외 케이스 보정 흐름을 중심으로 구성했습니다.</p>
             </div>
             <div class="portfolio-modal-info-item">
               <span class="info-label"><i class="fas fa-chart-line me-2"></i>분석 결과 및 인사이트</span>
-              <p class="info-desc">-</p>
+              <p class="info-desc">수작업으로 처리하던 과정을 표준화하고 자동화 가능성을 검증했습니다.</p>
             </div>
             <div class="portfolio-modal-info-item">
               <span class="info-label"><i class="fas fa-lightbulb me-2"></i>비즈니스 제안 및 액션 아이템</span>
-              <p class="info-desc">-</p>
+              <p class="info-desc">운영 적용을 위해 검증 기준과 사용자 피드백 루프를 함께 설계했습니다.</p>
             </div>
-          </div>
-          <div class="portfolio-modal-footer">
-            <a href="#" target="_blank" class="portfolio-modal-btn"><i class="fab fa-github me-2"></i>GitHub</a>
           </div>
         </div>
       </div>
@@ -365,7 +347,7 @@
         <div class="portfolio-modal-header">
           <div class="portfolio-modal-tag">Analysis</div>
           <h4 class="portfolio-modal-title">학술 대회 연구 트렌드 분석</h4>
-          <button type="button" class="portfolio-modal-close" data-bs-dismiss="modal"><i class="fas fa-times"></i></button>
+          <button type="button" class="portfolio-modal-close" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
         </div>
         <div class="portfolio-modal-body">
           <div class="portfolio-modal-info">
@@ -379,31 +361,28 @@
             </div>
             <div class="portfolio-modal-info-item">
               <span class="info-label"><i class="fas fa-align-left me-2"></i>프로젝트 설명</span>
-              <p class="info-desc">공공 데이터를 활용한 탐색적 데이터 분석 프로젝트입니다.</p>
+              <p class="info-desc">학술 대회 데이터를 기반으로 연구 주제와 키워드 흐름을 분석한 프로젝트입니다.</p>
             </div>
             <div class="portfolio-modal-info-item">
               <span class="info-label"><i class="fas fa-bullseye me-2"></i>배경 및 목표</span>
-              <p class="info-desc">-</p>
+              <p class="info-desc">연구 분야의 변화 방향과 반복적으로 등장하는 주제를 파악하는 것을 목표로 했습니다.</p>
             </div>
             <div class="portfolio-modal-info-item">
               <span class="info-label"><i class="fas fa-database me-2"></i>데이터 수집 및 전처리</span>
-              <p class="info-desc">-</p>
+              <p class="info-desc">논문 제목, 초록, 키워드 등 분석 가능한 텍스트 정보를 정리했습니다.</p>
             </div>
             <div class="portfolio-modal-info-item">
               <span class="info-label"><i class="fas fa-flask me-2"></i>분석 방법론</span>
-              <p class="info-desc">-</p>
+              <p class="info-desc">키워드 빈도, 기간별 변화, 주제 군집을 중심으로 트렌드를 확인했습니다.</p>
             </div>
             <div class="portfolio-modal-info-item">
               <span class="info-label"><i class="fas fa-chart-line me-2"></i>분석 결과 및 인사이트</span>
-              <p class="info-desc">-</p>
+              <p class="info-desc">주요 연구 키워드의 변화와 관심 주제의 확장 흐름을 도출했습니다.</p>
             </div>
             <div class="portfolio-modal-info-item">
               <span class="info-label"><i class="fas fa-lightbulb me-2"></i>비즈니스 제안 및 액션 아이템</span>
-              <p class="info-desc">-</p>
+              <p class="info-desc">후속 연구 및 기술 탐색 방향을 정하는 데 활용할 수 있는 관찰 결과를 정리했습니다.</p>
             </div>
-          </div>
-          <div class="portfolio-modal-footer">
-            <a href="#" target="_blank" class="portfolio-modal-btn"><i class="fab fa-github me-2"></i>GitHub</a>
           </div>
         </div>
       </div>
@@ -415,8 +394,8 @@
       <div class="modal-content portfolio-modal-content">
         <div class="portfolio-modal-header">
           <div class="portfolio-modal-tag">LLM · Analysis</div>
-          <h4 class="portfolio-modal-title">LLM & vector 유사도 기반 자료 검색 구조 설계</h4>
-          <button type="button" class="portfolio-modal-close" data-bs-dismiss="modal"><i class="fas fa-times"></i></button>
+          <h4 class="portfolio-modal-title">LLM &amp; vector 유사도 기반 자료 검색 구조 설계</h4>
+          <button type="button" class="portfolio-modal-close" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
         </div>
         <div class="portfolio-modal-body">
           <div class="portfolio-modal-info">
@@ -424,137 +403,34 @@
               <span class="info-label"><i class="fas fa-layer-group me-2"></i>기술 스택</span>
               <div class="info-tags">
                 <span class="tech-tag">Python</span>
-                <span class="tech-tag">Scikit-learn</span>
-                <span class="tech-tag">XGBoost</span>
+                <span class="tech-tag">LLM</span>
+                <span class="tech-tag">Vector Search</span>
               </div>
             </div>
             <div class="portfolio-modal-info-item">
               <span class="info-label"><i class="fas fa-align-left me-2"></i>프로젝트 설명</span>
-              <p class="info-desc">Kaggle / Dacon 머신러닝 경진대회 참가 프로젝트입니다.</p>
+              <p class="info-desc">LLM과 vector 유사도 검색을 활용해 자료 검색 구조를 설계한 프로젝트입니다.</p>
             </div>
             <div class="portfolio-modal-info-item">
               <span class="info-label"><i class="fas fa-bullseye me-2"></i>배경 및 목표</span>
-              <p class="info-desc">-</p>
+              <p class="info-desc">사용자가 필요한 자료를 더 빠르게 찾을 수 있도록 의미 기반 검색 흐름을 구성하는 것을 목표로 했습니다.</p>
             </div>
             <div class="portfolio-modal-info-item">
               <span class="info-label"><i class="fas fa-database me-2"></i>데이터 수집 및 전처리</span>
-              <p class="info-desc">-</p>
+              <p class="info-desc">검색 대상 문서를 정리하고 임베딩 및 메타데이터 설계를 검토했습니다.</p>
             </div>
             <div class="portfolio-modal-info-item">
               <span class="info-label"><i class="fas fa-flask me-2"></i>분석 방법론</span>
-              <p class="info-desc">-</p>
+              <p class="info-desc">문서 분할, 벡터화, 유사도 검색, LLM 응답 생성 흐름을 기준으로 구조를 설계했습니다.</p>
             </div>
             <div class="portfolio-modal-info-item">
               <span class="info-label"><i class="fas fa-chart-line me-2"></i>분석 결과 및 인사이트</span>
-              <p class="info-desc">-</p>
+              <p class="info-desc">키워드 검색만으로 찾기 어려운 관련 자료를 의미 기반으로 탐색할 수 있는 가능성을 확인했습니다.</p>
             </div>
             <div class="portfolio-modal-info-item">
               <span class="info-label"><i class="fas fa-lightbulb me-2"></i>비즈니스 제안 및 액션 아이템</span>
-              <p class="info-desc">-</p>
+              <p class="info-desc">자료 검색 품질 개선을 위해 검색 결과 평가와 문서 관리 기준을 함께 제안했습니다.</p>
             </div>
-          </div>
-          <div class="portfolio-modal-footer">
-            <a href="#" target="_blank" class="portfolio-modal-btn"><i class="fab fa-github me-2"></i>GitHub</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal fade" id="modal5" tabindex="-1">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content portfolio-modal-content">
-        <div class="portfolio-modal-header">
-          <div class="portfolio-modal-tag">DATA-ANALYSIS</div>
-          <h4 class="portfolio-modal-title">주가 예측 알고리즘</h4>
-          <button type="button" class="portfolio-modal-close" data-bs-dismiss="modal"><i class="fas fa-times"></i></button>
-        </div>
-        <div class="portfolio-modal-body">
-          <div class="portfolio-modal-info">
-            <div class="portfolio-modal-info-item">
-              <span class="info-label"><i class="fas fa-layer-group me-2"></i>기술 스택</span>
-              <div class="info-tags">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">LSTM</span>
-                <span class="tech-tag">TensorFlow</span>
-              </div>
-            </div>
-            <div class="portfolio-modal-info-item">
-              <span class="info-label"><i class="fas fa-align-left me-2"></i>프로젝트 설명</span>
-              <p class="info-desc">LSTM 기반 주가 예측 딥러닝 모델 구현 프로젝트입니다.</p>
-            </div>
-            <div class="portfolio-modal-info-item">
-              <span class="info-label"><i class="fas fa-bullseye me-2"></i>배경 및 목표</span>
-              <p class="info-desc">-</p>
-            </div>
-            <div class="portfolio-modal-info-item">
-              <span class="info-label"><i class="fas fa-database me-2"></i>데이터 수집 및 전처리</span>
-              <p class="info-desc">-</p>
-            </div>
-            <div class="portfolio-modal-info-item">
-              <span class="info-label"><i class="fas fa-flask me-2"></i>분석 방법론</span>
-              <p class="info-desc">-</p>
-            </div>
-            <div class="portfolio-modal-info-item">
-              <span class="info-label"><i class="fas fa-chart-line me-2"></i>분석 결과 및 인사이트</span>
-              <p class="info-desc">-</p>
-            </div>
-            <div class="portfolio-modal-info-item">
-              <span class="info-label"><i class="fas fa-lightbulb me-2"></i>비즈니스 제안 및 액션 아이템</span>
-              <p class="info-desc">-</p>
-            </div>
-          </div>
-          <div class="portfolio-modal-footer">
-            <a href="#" target="_blank" class="portfolio-modal-btn"><i class="fab fa-github me-2"></i>GitHub</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal fade" id="modal6" tabindex="-1">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content portfolio-modal-content">
-        <div class="portfolio-modal-header">
-          <div class="portfolio-modal-tag">OTHERS</div>
-          <h4 class="portfolio-modal-title">기타 프로젝트</h4>
-          <button type="button" class="portfolio-modal-close" data-bs-dismiss="modal"><i class="fas fa-times"></i></button>
-        </div>
-        <div class="portfolio-modal-body">
-          <div class="portfolio-modal-info">
-            <div class="portfolio-modal-info-item">
-              <span class="info-label"><i class="fas fa-layer-group me-2"></i>기술 스택</span>
-              <div class="info-tags">
-                <span class="tech-tag">다양한 기술</span>
-              </div>
-            </div>
-            <div class="portfolio-modal-info-item">
-              <span class="info-label"><i class="fas fa-align-left me-2"></i>프로젝트 설명</span>
-              <p class="info-desc">기타 개인 프로젝트 및 활동입니다.</p>
-            </div>
-            <div class="portfolio-modal-info-item">
-              <span class="info-label"><i class="fas fa-bullseye me-2"></i>배경 및 목표</span>
-              <p class="info-desc">-</p>
-            </div>
-            <div class="portfolio-modal-info-item">
-              <span class="info-label"><i class="fas fa-database me-2"></i>데이터 수집 및 전처리</span>
-              <p class="info-desc">-</p>
-            </div>
-            <div class="portfolio-modal-info-item">
-              <span class="info-label"><i class="fas fa-flask me-2"></i>분석 방법론</span>
-              <p class="info-desc">-</p>
-            </div>
-            <div class="portfolio-modal-info-item">
-              <span class="info-label"><i class="fas fa-chart-line me-2"></i>분석 결과 및 인사이트</span>
-              <p class="info-desc">-</p>
-            </div>
-            <div class="portfolio-modal-info-item">
-              <span class="info-label"><i class="fas fa-lightbulb me-2"></i>비즈니스 제안 및 액션 아이템</span>
-              <p class="info-desc">-</p>
-            </div>
-          </div>
-          <div class="portfolio-modal-footer">
-            <a href="#" target="_blank" class="portfolio-modal-btn"><i class="fab fa-github me-2"></i>GitHub</a>
           </div>
         </div>
       </div>
@@ -565,8 +441,7 @@
   <footer class="footer-section text-center">
     <div class="container">
       <div class="footer-icons mb-3">
-        <a href="https://github.com/soyoung-yu" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://www.youtube.com/@yourchannel" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://github.com/soyoung-yu" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
         <a href="mailto:syy7201@gmail.com"><i class="fas fa-envelope"></i></a>
       </div>
       <p class="footer-copy">© 2026 유소영. All rights reserved.</p>

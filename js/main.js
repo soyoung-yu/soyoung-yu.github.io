@@ -3,6 +3,8 @@
 // ===========================
 window.addEventListener('scroll', () => {
   const nav = document.getElementById('mainNav');
+  if (!nav) return;
+
   if (window.scrollY > 50) {
     nav.style.backgroundColor = 'rgba(20, 20, 40, 0.98)';
     nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.3)';
@@ -23,10 +25,10 @@ filterBtns.forEach(btn => {
     filterBtns.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
 
-    const filter = btn.dataset.filter;
+    const filter = btn.dataset.filter.toLowerCase();
 
     portfolioItems.forEach(item => {
-      const categories = item.dataset.category.split(' ');
+      const categories = item.dataset.category.toLowerCase().split(' ');
       if (filter === 'all' || categories.includes(filter)) {
         item.classList.remove('hidden');
       } else {
@@ -36,14 +38,6 @@ filterBtns.forEach(btn => {
   });
 });
 
-// ===========================
-// 포트폴리오 이미지 에러 처리
-// ===========================
-document.querySelectorAll('.portfolio-card img').forEach(img => {
-  img.addEventListener('error', function() {
-    this.classList.add('error');
-  });
-});
 // ===========================
 const observerOptions = {
   threshold: 0.1,
@@ -78,7 +72,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
       // 모바일 메뉴 닫기
       const navCollapse = document.getElementById('navbarNav');
-      if (navCollapse.classList.contains('show')) {
+      if (navCollapse && navCollapse.classList.contains('show')) {
         navCollapse.classList.remove('show');
       }
     }
