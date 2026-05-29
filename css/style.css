@@ -36,7 +36,7 @@ body {
   display: block;
   width: 50px;
   height: 3px;
-  background: #2C2C3E;
+  background: #4a90e2;
   margin: 12px auto 0;
   border-radius: 2px;
 }
@@ -48,16 +48,11 @@ body {
   margin-bottom: 10px;
 }
 
-/* bg-light 섹션 배경을 크림 레몬으로 */
-.bg-light {
-  background-color: #FFF9C4 !important;
-}
-
 /* ===========================
    Navbar
 =========================== */
 #mainNav {
-  background-color: rgba(44, 44, 62, 0.95);
+  background-color: rgba(20, 20, 40, 0.95);
   backdrop-filter: blur(8px);
   transition: background 0.3s;
   padding: 14px 0;
@@ -79,7 +74,7 @@ body {
 }
 
 #mainNav .nav-link:hover {
-  color: #FFF9C4 !important;
+  color: #4a90e2 !important;
 }
 
 /* ===========================
@@ -87,7 +82,7 @@ body {
 =========================== */
 .hero-section {
   min-height: 100vh;
-  background-color: #2C2C3E;
+  background-color: #14142a;
   background-size: cover;
   background-position: left bottom;
   background-repeat: no-repeat;
@@ -96,12 +91,12 @@ body {
   padding-top: 80px;
 }
 
-/* 배경 이미지 위에 오버레이 */
+/* 배경 이미지 위에 네이비 오버레이 */
 .hero-section::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(44, 44, 62, 0.45);
+  background: rgba(20, 20, 40, 0.45);
   z-index: 0;
 }
 
@@ -112,7 +107,7 @@ body {
 
 .hero-greeting {
   font-size: 1.2rem;
-  color: #FFF9C4;
+  color: #a0b4d6;
   letter-spacing: 2px;
   margin-bottom: 8px;
 }
@@ -127,14 +122,14 @@ body {
 
 .hero-sub {
   font-size: 1rem;
-  color: #FFF9C4;
+  color: #a0b4d6;
   letter-spacing: 3px;
   text-transform: uppercase;
 }
 
 .hero-btns .btn-primary {
-  background-color: #2C2C3E;
-  border-color: #2C2C3E;
+  background-color: #4a90e2;
+  border-color: #4a90e2;
   padding: 10px 28px;
   border-radius: 30px;
   font-weight: 500;
@@ -175,7 +170,7 @@ body {
 }
 
 .about-info-box a {
-  color: #2C2C3E;
+  color: #4a90e2;
   text-decoration: none;
   font-weight: 500;
 }
@@ -200,7 +195,7 @@ body {
 
 .skill-icon {
   font-size: 2rem;
-  color: #2C2C3E;
+  color: #4a90e2;
   margin-bottom: 14px;
 }
 
@@ -226,8 +221,8 @@ body {
 .history-category {
   font-size: 1.15rem;
   font-weight: 700;
-  color: #2C2C3E;
-  border-left: 4px solid #2C2C3E;
+  color: #302b63;
+  border-left: 4px solid #4a90e2;
   padding-left: 14px;
 }
 
@@ -260,14 +255,14 @@ body {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: #2C2C3E;
+  background: #4a90e2;
   border: 2px solid #fff;
-  box-shadow: 0 0 0 2px #2C2C3E;
+  box-shadow: 0 0 0 2px #4a90e2;
 }
 
 .timeline-date {
   font-size: 0.82rem;
-  color: #2C2C3E;
+  color: #4a90e2;
   font-weight: 600;
   margin-bottom: 4px;
   letter-spacing: 0.5px;
@@ -316,9 +311,9 @@ body {
 
 .filter-btn:hover,
 .filter-btn.active {
-  background: #2C2C3E;
-  border-color: #2C2C3E;
-  color: #FFF9C4;
+  background: #4a90e2;
+  border-color: #4a90e2;
+  color: #fff;
 }
 
 .portfolio-card {
@@ -346,7 +341,7 @@ body {
 .portfolio-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(44, 44, 62, 0.78);
+  background: rgba(20, 30, 60, 0.75);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -365,8 +360,8 @@ body {
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 1.5px;
-  color: #FFF9C4;
-  background: rgba(44, 44, 62, 0.4);
+  color: #a0c4ff;
+  background: rgba(74, 144, 226, 0.3);
   padding: 3px 10px;
   border-radius: 20px;
   margin-bottom: 10px;
@@ -418,20 +413,20 @@ body {
    Footer
 =========================== */
 .footer-section {
-  background: #2C2C3E;
-  color: #ccc;
+  background: #14142a;
+  color: #aaa;
   padding: 40px 0 30px;
 }
 
 .footer-icons a {
-  color: #ccc;
+  color: #aaa;
   font-size: 1.5rem;
   margin: 0 12px;
   transition: color 0.2s;
 }
 
 .footer-icons a:hover {
-  color: #FFF9C4;
+  color: #4a90e2;
 }
 
 .footer-copy {
