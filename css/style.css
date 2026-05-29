@@ -287,6 +287,13 @@ body {
   margin-bottom: 4px;
 }
 
+.timeline-company-desc {
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: #888;
+  margin-left: 6px;
+}
+
 /* ===========================
    Portfolio
 =========================== */
