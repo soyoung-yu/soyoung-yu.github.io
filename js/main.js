@@ -37,7 +37,13 @@ filterBtns.forEach(btn => {
 });
 
 // ===========================
-// 스크롤 애니메이션 (Intersection Observer)
+// 포트폴리오 이미지 에러 처리
+// ===========================
+document.querySelectorAll('.portfolio-card img').forEach(img => {
+  img.addEventListener('error', function() {
+    this.classList.add('error');
+  });
+});
 // ===========================
 const observerOptions = {
   threshold: 0.1,

@@ -323,7 +323,7 @@ body {
   cursor: pointer;
   box-shadow: 0 4px 16px rgba(0,0,0,0.1);
   aspect-ratio: 4/3;
-  background: #e8edf5;
+  background: linear-gradient(135deg, #e8edf5 0%, #d0d8e8 100%);
 }
 
 .portfolio-card img {
@@ -332,6 +332,12 @@ body {
   object-fit: cover;
   transition: transform 0.35s ease;
   display: block;
+}
+
+.portfolio-card img[src=""],
+.portfolio-card img:not([src]),
+.portfolio-card img.error {
+  visibility: hidden;
 }
 
 .portfolio-card:hover img {
