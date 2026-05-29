@@ -82,9 +82,32 @@ body {
 =========================== */
 .hero-section {
   min-height: 100vh;
-  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  background-color: #14142a;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
   color: #fff;
   padding-top: 80px;
+}
+
+/* 배경 이미지 위에 어두운 오버레이 */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(10, 10, 30, 0.82) 0%,
+    rgba(10, 10, 30, 0.55) 50%,
+    rgba(10, 10, 30, 0.3) 100%
+  );
+  z-index: 0;
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-greeting {
