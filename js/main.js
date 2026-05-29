@@ -59,6 +59,34 @@ document.querySelectorAll('.skill-card, .timeline-item, .portfolio-item').forEac
 });
 
 // ===========================
+// 총 경력 기간 자동 계산
+// ===========================
+(function () {
+  const periods = [
+    { start: [2021, 2], end: [2021, 9] },
+    { start: [2021, 9], end: [2025, 2] },
+    { start: [2025, 2], end: null }, // 재직 중
+  ];
+
+  const now = new Date();
+  const curYear = now.getFullYear();
+  const curMonth = now.getMonth() + 1;
+
+  let totalMonths = 0;
+  periods.forEach(({ start, end }) => {
+    const [ey, em] = end ? end : [curYear, curMonth];
+    totalMonths += (ey - start[0]) * 12 + (em - start[1]);
+  });
+
+  const years = Math.floor(totalMonths / 12);
+  const months = totalMonths % 12;
+  const label = `총 ${years}년${months > 0 ? ' ' + months + '개월' : ''}`;
+
+  const badge = document.querySelector('.history-total');
+  if (badge) badge.textContent = label;
+})();
+
+// ===========================
 // 부드러운 스크롤 (앵커 링크)
 // ===========================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
