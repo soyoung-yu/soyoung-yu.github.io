@@ -66,10 +66,26 @@ document.querySelectorAll('.skill-card, .timeline-item, .portfolio-item').forEac
   const curYear = now.getFullYear();
   const curMonth = now.getMonth() + 1;
 
-  function monthsBetween(startStr, endStr) {
+  function calcMonths(startStr, endStr, nextStartStr) {
     const [sy, sm] = startStr.split('-').map(Number);
-    const [ey, em] = endStr ? endStr.split('-').map(Number) : [curYear, curMonth];
-    return (ey - sy) * 12 + (em - sm);
+
+    if (!endStr) {
+      // 재직 중: 현재 월 포함
+      return (curYear - sy) * 12 + (curMonth - sm) + 1;
+    }
+
+    const [ey, em] = endStr.split('-').map(Number);
+
+    if (nextStartStr) {
+      const [ny, nm] = nextStartStr.split('-').map(Number);
+      if (ey === ny && em === nm) {
+        // 퇴사월 = 다음 직장 입사월 → 다음 직장에만 포함
+        return (ey - sy) * 12 + (em - sm);
+      }
+    }
+
+    // 퇴사월과 다음 입사월이 다르거나 마지막 직장 → 퇴사월 포함
+    return (ey - sy) * 12 + (em - sm) + 1;
   }
 
   function formatDuration(months) {
@@ -80,25 +96,25 @@ document.querySelectorAll('.skill-card, .timeline-item, .portfolio-item').forEac
     return `${m}개월`;
   }
 
-  // 각 회사 재직 기간 표시
-  document.querySelectorAll('.career-timeline .timeline-item').forEach(item => {
+  // 각 회사 재직 기간 표시 + 총합 계산
+  const items = document.querySelectorAll('.career-timeline .timeline-item');
+  let totalMonths = 0;
+
+  items.forEach((item, i) => {
     const start = item.dataset.start;
     const end = item.dataset.end || null;
+    const nextStart = items[i + 1] ? items[i + 1].dataset.start : null;
+    if (!start) return;
+
+    const months = calcMonths(start, end, nextStart);
+    totalMonths += months;
+
     const badge = item.querySelector('.timeline-duration');
-    if (start && badge) {
-      badge.textContent = formatDuration(monthsBetween(start, end));
-    }
+    if (badge) badge.textContent = formatDuration(months);
   });
 
-  // 총 경력 계산
-  const periods = [
-    { start: '2021-02', end: '2021-09' },
-    { start: '2021-09', end: '2025-01' },
-    { start: '2025-02', end: null },
-  ];
-  const total = periods.reduce((sum, { start, end }) => sum + monthsBetween(start, end), 0);
   const totalBadge = document.querySelector('.history-total');
-  if (totalBadge) totalBadge.textContent = `총 ${formatDuration(total)}`;
+  if (totalBadge) totalBadge.textContent = `총 ${formatDuration(totalMonths)}`;
 })();
 
 // ===========================
