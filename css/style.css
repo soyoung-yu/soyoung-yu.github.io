@@ -224,6 +224,20 @@ body {
   color: #302b63;
   border-left: 4px solid #4a90e2;
   padding-left: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.history-total {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #4a90e2;
+  background: #eef4fc;
+  border: 1px solid #c8ddf5;
+  border-radius: 20px;
+  padding: 2px 10px;
+  letter-spacing: 0.3px;
 }
 
 .timeline {
