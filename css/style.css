@@ -127,6 +127,11 @@ body {
   color: #4a90e2;
 }
 
+.hero-word-em {
+  color: #4a90e2;
+  font-weight: 500;
+}
+
 .hero-btns .btn-primary {
   background-color: #4a90e2;
   border-color: #4a90e2;
