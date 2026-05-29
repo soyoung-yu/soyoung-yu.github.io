@@ -158,14 +158,15 @@ body {
   border-radius: 12px;
   padding: 24px 28px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.07);
-  display: flex;
-  gap: 40px;
-  flex-wrap: wrap;
 }
 
 .about-info-box p {
-  margin-bottom: 0;
+  margin-bottom: 10px;
   font-size: 0.95rem;
+}
+
+.about-info-box p:last-child {
+  margin-bottom: 0;
 }
 
 .about-info-box a {
