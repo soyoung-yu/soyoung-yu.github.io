@@ -124,12 +124,15 @@ body {
 }
 
 .hero-name-em {
-  color: #4a90e2;
+  color: #fff;
 }
 
 .hero-word-em {
-  color: #4a90e2;
+  color: #fff;
   font-weight: 500;
+  background: rgba(160, 210, 255, 0.25);
+  border-radius: 4px;
+  padding: 0 4px;
 }
 
 .hero-btns .btn-primary {
