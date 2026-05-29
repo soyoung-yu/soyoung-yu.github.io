@@ -103,7 +103,7 @@ document.querySelectorAll('.skill-card, .timeline-item, .portfolio-item').forEac
   items.forEach((item, i) => {
     const start = item.dataset.start;
     const end = item.dataset.end || null;
-    const nextStart = items[i + 1] ? items[i + 1].dataset.start : null;
+    const nextStart = i > 0 ? items[i - 1].dataset.start : null;
     if (!start) return;
 
     const months = calcMonths(start, end, nextStart);
