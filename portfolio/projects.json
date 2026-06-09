@@ -1,0 +1,76 @@
+[
+  {
+    "id": "modal1",
+    "slug": "business-insight-report",
+    "title": "비즈니스 인사이트 리포트",
+    "tag": "Insight",
+    "categories": [
+      "insight"
+    ],
+    "tags": [
+      "Insight"
+    ],
+    "image": "images/portfolio1.png",
+    "body": "portfolio/projects/business-insight-report.html"
+  },
+  {
+    "id": "modal2",
+    "slug": "formulation-automation",
+    "title": "LLM 기반 Formulation 자동화",
+    "tag": "LLM · Analysis",
+    "categories": [
+      "llm",
+      "analysis"
+    ],
+    "tags": [
+      "LLM",
+      "Analysis"
+    ],
+    "image": "images/portfolio2.png",
+    "body": "portfolio/projects/formulation-automation.html"
+  },
+  {
+    "id": "modal3",
+    "slug": "research-trend-analysis",
+    "title": "학술 대회 연구 트렌드 분석",
+    "tag": "Analysis",
+    "categories": [
+      "analysis"
+    ],
+    "tags": [
+      "Analysis"
+    ],
+    "image": "images/portfolio3.png",
+    "body": "portfolio/projects/research-trend-analysis.html"
+  },
+  {
+    "id": "modal4",
+    "slug": "vector-search-structure",
+    "title": "LLM & vector 유사도 기반 자료 검색 구조 설계",
+    "tag": "LLM · Analysis",
+    "categories": [
+      "llm",
+      "analysis"
+    ],
+    "tags": [
+      "LLM",
+      "Analysis"
+    ],
+    "image": "images/portfolio4.png",
+    "body": "portfolio/projects/vector-search-structure.html"
+  },
+  {
+    "id": "modal5",
+    "slug": "global-lab-kpi-ssot",
+    "title": "글로벌 연구소 법인 KPI 측정을 위한 SSOT 설계",
+    "tag": "Analysis",
+    "categories": [
+      "analysis"
+    ],
+    "tags": [
+      "Analysis"
+    ],
+    "image": "images/portfolio5.png",
+    "body": "portfolio/projects/global-lab-kpi-ssot.html"
+  }
+]

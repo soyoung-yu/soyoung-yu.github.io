@@ -1,0 +1,118 @@
+<div class="portfolio-modal-info">
+  <div class="portfolio-modal-info-item">
+    <span class="info-label"><i class="fas fa-layer-group me-2"></i>기술 스택</span>
+    <div class="info-tags">
+      <span class="tech-tag">Python</span>
+      <span class="tech-tag">SQL</span>
+      <span class="tech-tag">LLM (Claude)</span>
+      <span class="tech-tag">Codex</span>
+    </div>
+  </div>
+  <div class="portfolio-modal-info-item">
+    <span class="info-label"><i class="fas fa-align-left me-2"></i>프로젝트 설명</span>
+    <p class="desc-lead">연구소 각 법인은 매월 의뢰, 확정, 초도, 매출 KPI를 수작업으로 집계하여 중앙 부서(GCC)에 제출하고 있었습니다. GCC에서 KPI 정의 및 산출 기준을 제시하고 있었으나, 실제 집계 과정은 각 법인의 엑셀 기반 수작업에 의존하고 있어 휴먼 에러 발생 가능성이 높았으며, KPI 기준 해석의 차이로 인해 법인 간 성과 비교의 신뢰성이 낮은 상태였습니다.</p>
+    <p class="info-desc">이에 시스템 DB를 기반으로 KPI 집계 과정을 원천부터 검증하고, 법인별 KPI 산출 로직과 예외 처리 기준을 분석하였습니다. 그 결과 동일 KPI에 대해서도 법인마다 서로 다른 집계 기준과 예외 규칙이 적용되고 있음을 확인하였으며, 관계 부서 및 현업 연구소와 협의를 통해 KPI 정의를 재정립하고 글로벌 공통 KPI 체계를 수립하였습니다. 최종적으로 표준화된 KPI 로직을 기반으로 SSOT(Single Source of Truth)를 구축하고 KPI 집계 자동화 체계를 구현하였습니다.</p>
+  </div>
+  <div class="portfolio-modal-info-item">
+    <span class="info-label"><i class="fas fa-bullseye me-2"></i>배경 및 목표</span>
+    <p class="goal-box">기존 각 법인이 수작업으로 관리하던 KPI 집계 체계를 시스템 DB 기반의 자동화 방식으로 전환하고, 법인별로 상이했던 KPI 산정 기준을 표준화하여 글로벌 연구소의 성과를 동일 기준으로 측정할 수 있는 SSOT(Single Source of Truth)를 구축하고자 함.</p>
+  </div>
+  <div class="portfolio-modal-info-item">
+    <span class="info-label"><i class="fas fa-database me-2"></i>데이터 수집 및 전처리</span>
+    <h6 class="info-subtitle">데이터 수집</h6>
+    <p class="info-sub-label">수작업 KPI 데이터</p>
+    <ul class="info-list">
+      <li>각 법인이 기존 성과평가에 활용하던 의뢰, 초도, 확정, 매출 KPI 집계 데이터 수집</li>
+      <li>엑셀 형태의 수작업 보고 자료 확보</li>
+    </ul>
+    <p class="info-sub-label">시스템 DB</p>
+    <ul class="info-list">
+      <li><strong>의뢰 :</strong> 5개 테이블을 분석하여 KPI 산출을 위한 통합 데이터 마트 구축</li>
+      <li><strong>확정/초도 :</strong> 자재 마스터 테이블을 기반으로 KPI 집계용 데이터 마트 구축</li>
+      <li><strong>매출 :</strong> 관계 부서와 협업하여 법인별 자재 매출 데이터 마트 확보</li>
+    </ul>
+    <h6 class="info-subtitle">데이터 정합성 검증</h6>
+    <ul class="info-list">
+      <li>수작업 KPI 결과와 시스템 DB 데이터를 비교하여 법인별 KPI 산출 로직 검증</li>
+      <li>KPI 정의, 집계 기준, 제외 조건 등의 차이를 분석하여 표준 KPI 산출 기준 수립</li>
+    </ul>
+  </div>
+  <div class="portfolio-modal-info-item">
+    <span class="info-label"><i class="fas fa-flask me-2"></i>분석 방법론</span>
+    <h6 class="info-subtitle">탐색적 데이터 분석 (EDA)</h6>
+    <ul class="info-list">
+      <li>수작업 KPI 집계 결과와 시스템 DB 기반 집계 결과를 비교 분석</li>
+      <li>KPI 수치 차이가 발생하는 구간을 식별하고 원인 후보 도출</li>
+    </ul>
+    <h6 class="info-subtitle">가설 기반 데이터 정합성 검증</h6>
+    <ul class="info-list">
+      <li>수작업 KPI와 시스템 KPI 간 차이 발생 원인에 대한 가설 수립</li>
+      <li>데이터 구조, KPI 정의, 집계 기준, 제외 조건 등을 검토하여 가설 검증 수행</li>
+      <li>검증 결과를 바탕으로 공통 KPI 산출 기준 도출</li>
+    </ul>
+    <h6 class="info-subtitle">LLM을 활용한 데이터 검증 지원</h6>
+    <ul class="info-list">
+      <li>정합성 검증 효율화를 위해 LLM 분석 프롬프트 설계</li>
+      <li>데이터 구조, 분석 목적, 검증 항목, 예상 원인 후보 등을 프롬프트에 포함하여 분석 수행</li>
+      <li>LLM을 활용해 데이터 간 차이점 및 원인 후보를 탐색하고 검증 과정 지원</li>
+      <li>도출된 결과는 실제 데이터와 비즈니스 로직을 기반으로 재검토하여 최종 판단</li>
+    </ul>
+  </div>
+  <div class="portfolio-modal-info-item">
+    <span class="info-label"><i class="fas fa-chart-line me-2"></i>분석 결과 및 인사이트</span>
+    <h6 class="info-subtitle">법인별 KPI 정의 및 집계 기준 차이 발견</h6>
+    <p class="info-desc">동일한 KPI 명칭을 사용하고 있었으나, 실제 집계 기준은 법인별로 상이하게 운영되고 있음을 확인</p>
+    <ul class="info-list">
+      <li><strong>확정일 기준 차이</strong>
+        <ul>
+          <li>일부 법인 : BOM 상태값 1110으로 변경된 시점</li>
+          <li>그외 법인 : BOM 상태값 1111로 변경된 시점</li>
+        </ul>
+      </li>
+      <li><strong>의뢰/개발 법인 활용 기준 차이</strong>
+        <ul>
+          <li>일부 법인 : 의뢰법인 기준으로 의뢰 수 집계</li>
+          <li>그외 법인 : 개발법인 기준으로 의뢰 수 집계</li>
+        </ul>
+      </li>
+    </ul>
+    <h6 class="info-subtitle">법인별 예외 처리 로직 존재 확인</h6>
+    <ul class="info-list">
+      <li>일부 법인은 현지 운영 환경을 반영하여 별도의 제외 조건을 적용하고 있음을 발견</li>
+      <li>예) 특정 고객사의 과도한 의뢰 건을 집계 대상에서 제외</li>
+      <li>법인의 주관적 판단에 따라 KPI 수치가 달라질 수 있음을 확인</li>
+    </ul>
+    <p class="insight-callout">글로벌 연구소의 KPI는 법인별로 상이하게 운영되고 있어, 성과를 동일 기준에서 비교하기 어려움</p>
+  </div>
+  <div class="portfolio-modal-info-item">
+    <span class="info-label"><i class="fas fa-lightbulb me-2"></i>비즈니스 제안 및 액션 아이템</span>
+    <h6 class="info-subtitle">KPI 정의 재정립 및 표준화</h6>
+    <p class="info-desc">관계 부서와 논의하여 KPI가 측정하고자 하는 성과의 정의를 기준으로 글로벌 공통 KPI 체계를 재검토</p>
+    <p class="info-sub-label">KPI 기준 재검토 결과</p>
+    <ul class="info-list">
+      <li><strong>확정 KPI 기준 표준화</strong>
+        <ul>
+          <li>기존 확정 KPI는 BOM 상태값 1111 시점을 기준으로 운영되고 있었음</li>
+          <li>그러나 KPI의 목적을 고려할 때, 실제 처방 확정 시점인 BOM 상태값 1110이 더 적합하다고 판단</li>
+          <li>이에 확정 KPI 기준을 BOM 상태값 1110 기준으로 통일함</li>
+        </ul>
+      </li>
+      <li><strong>의뢰 KPI 기준 표준화</strong>
+        <ul>
+          <li>기존 의뢰 KPI는 의뢰 법인을 기준으로 운영되고 있었음</li>
+          <li>그러나 KPI의 목적이 연구소의 성과 측정에 있는 만큼, 실제 개발을 수행한 연구소를 기준으로 평가하는 것이 적절하다고 판단</li>
+          <li>이에 의뢰 KPI 집계 기준을 개발 법인 기준으로 통일함</li>
+        </ul>
+      </li>
+    </ul>
+    <h6 class="info-subtitle">예외 처리 기준 정비</h6>
+    <ul class="info-list">
+      <li>KPI 목적에 부합하는 예외 조건은 유지하고, 공정성을 저해하는 예외 조건은 제거</li>
+    </ul>
+    <h6 class="info-subtitle">글로벌 연구소 KPI SSOT 구축</h6>
+    <ul class="info-list">
+      <li>KPI 정의, 집계 기준, 예외 처리 조건을 표준화하여 글로벌 연구소 공통 KPI 체계 구축</li>
+      <li>법인 간 성과 비교의 신뢰성을 확보하고 KPI 자동 집계 기반 마련</li>
+    </ul>
+  </div>
+</div>

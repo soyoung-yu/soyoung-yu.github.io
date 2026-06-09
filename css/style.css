@@ -114,7 +114,7 @@ body {
 
 .hero-name {
   font-family: 'Montserrat', sans-serif;
-  font-size: 3.5rem;
+  font-size: 5.25rem;
   font-weight: 700;
   line-height: 1.1;
   margin-bottom: 16px;
@@ -435,55 +435,75 @@ body {
   display: none;
 }
 
+.portfolio-load-error {
+  color: #7a1f1f;
+  background: #fff4f4;
+  border: 1px solid #f1c7c7;
+  border-radius: 6px;
+  margin: 0 12px;
+  padding: 14px 16px;
+  width: 100%;
+}
+
 /* ===========================
    Modal
 =========================== */
 .portfolio-modal-content {
-  border: none;
-  border-radius: 16px;
+  border: 1px solid #e7e5df;
+  border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 24px 60px rgba(0,0,0,0.25);
+  box-shadow: 0 18px 56px rgba(15, 23, 42, 0.16);
+  background: #fff;
 }
 
 .modal-dialog:has(.portfolio-modal-content) {
+  max-width: min(1040px, calc(100vw - 32px));
   margin-top: 16px;
   margin-bottom: 16px;
 }
 
 .portfolio-modal-header {
-  background: #4a90e2;
-  padding: 28px 32px 24px;
+  background: #fff;
+  padding: 34px 42px 22px;
   position: relative;
+  border-bottom: 1px solid #eceae5;
 }
 
 .portfolio-modal-tag {
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  color: rgba(255,255,255,0.75);
-  text-transform: uppercase;
-  margin-bottom: 8px;
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: #5f6368;
+  background: #f1f1ef;
+  border: 1px solid #e2e1dc;
+  border-radius: 5px;
+  padding: 3px 8px;
+  margin-bottom: 14px;
 }
 
 .portfolio-modal-title {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.5rem;
+  font-family: 'Noto Sans KR', 'Montserrat', sans-serif;
+  font-size: 1.72rem;
   font-weight: 700;
-  color: #fff;
+  color: #222;
   margin: 0;
   padding-right: 40px;
+  line-height: 1.35;
 }
 
 .portfolio-modal-close {
   position: absolute;
-  top: 20px;
-  right: 24px;
-  background: rgba(255,255,255,0.2);
+  top: 24px;
+  right: 28px;
+  background: transparent;
   border: none;
-  color: #fff;
+  color: #8b8b86;
   width: 32px;
   height: 32px;
-  border-radius: 50%;
+  border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -493,11 +513,12 @@ body {
 }
 
 .portfolio-modal-close:hover {
-  background: rgba(255,255,255,0.35);
+  background: #f1f1ef;
+  color: #222;
 }
 
 .portfolio-modal-body {
-  padding: 28px 32px;
+  padding: 34px 42px 42px;
   background: #fff;
   max-height: 82vh;
   overflow-y: auto;
@@ -506,37 +527,38 @@ body {
 .portfolio-modal-info {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 60px;
 }
 
 .portfolio-modal-info-item {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 14px;
 }
 
 /* 섹션 구분선 */
 .portfolio-modal-info-item + .portfolio-modal-info-item {
-  padding-top: 4px;
-  border-top: 1px solid #f0f4fa;
+  padding-top: 16px;
+  border-top: 1px solid #efede8;
 }
 
 /* 섹션 헤더 */
 .info-label {
-  font-size: 0.7rem;
-  font-weight: 800;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #4a90e2;
+  font-size: 1.12rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+  color: #222;
   display: flex;
   align-items: center;
   gap: 7px;
-  padding-bottom: 8px;
-  border-bottom: 1.5px solid #deeaf9;
+  padding-bottom: 2px;
+  border-bottom: none;
 }
 
 .info-label i {
-  font-size: 0.8rem;
+  font-size: 1rem;
+  color: #8b8b86;
 }
 
 .info-tags {
@@ -546,13 +568,13 @@ body {
 }
 
 .tech-tag {
-  background: #eef4fc;
-  color: #4a90e2;
+  background: #f5f5f3;
+  color: #4f4f49;
   font-size: 0.82rem;
   font-weight: 600;
-  padding: 4px 14px;
-  border-radius: 20px;
-  border: 1px solid #c8ddf5;
+  padding: 4px 11px;
+  border-radius: 5px;
+  border: 1px solid #e1dfd8;
 }
 
 /* 본문 텍스트 기본 */
@@ -560,7 +582,7 @@ body {
   font-size: 0.93rem;
   font-weight: 400;
   color: #3d3d3d;
-  line-height: 1.95;
+  line-height: 1.9;
   margin: 0;
 }
 
@@ -568,42 +590,104 @@ body {
 .desc-lead {
   font-size: 0.96rem;
   font-weight: 500;
-  color: #1a2f4a;
-  line-height: 2;
+  color: #2f3437;
+  line-height: 1.95;
   margin: 0;
-  padding: 14px 18px;
-  background: #f6f9fe;
-  border-left: 4px solid #4a90e2;
-  border-radius: 0 8px 8px 0;
+  padding: 16px 18px;
+  background: #f7f6f3;
+  border-left: 4px solid #d8d5cc;
+  border-radius: 5px;
+}
+
+/* 문장 안 핵심 표현 강조 */
+.highlight-phrase {
+  color: inherit;
+  font-weight: 700;
+  background: linear-gradient(180deg, rgba(255,255,255,0) 62%, #f3ead2 62%);
+  padding: 0 2px;
+  border-radius: 3px;
 }
 
 /* 수치·성과 강조 */
 .stat-em {
-  color: #3278cc;
+  color: #2f3437;
   font-weight: 700;
+}
+
+/* 핵심 성과 지표 */
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.impact-card {
+  background: #fbfbfa;
+  border: 1px solid #e7e5df;
+  border-radius: 6px;
+  padding: 14px 12px;
+  min-height: 88px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+
+.impact-value {
+  color: #2f3437;
+  font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.impact-label {
+  color: #73726e;
+  font-size: 0.76rem;
+  font-weight: 600;
+  line-height: 1.45;
 }
 
 /* 배경·목표 하이라이트 박스 */
 .goal-box {
-  background: #f2f7ff;
-  border: 1px solid #d4e6f8;
-  border-radius: 10px;
+  background: #f7f6f3;
+  border: 1px solid #e7e5df;
+  border-radius: 6px;
   padding: 16px 20px;
   font-size: 0.93rem;
   font-weight: 400;
-  color: #24406a;
+  color: #37352f;
   line-height: 1.9;
   margin: 0;
+}
+
+.two-column-block {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+
+.method-stack {
+  display: grid;
+  gap: 12px;
+}
+
+.method-block,
+.insight-block {
+  background: #fbfbfa;
+  border: 1px solid #e7e5df;
+  border-radius: 6px;
+  padding: 14px 16px;
 }
 
 /* 소제목 (데이터 수집, EDA 등) */
 .info-subtitle {
   font-size: 0.88rem;
   font-weight: 700;
-  color: #1a2f4a;
-  margin: 10px 0 2px;
+  color: #2f3437;
+  margin: 0 0 6px;
   padding-left: 11px;
-  border-left: 3px solid #4a90e2;
+  border-left: 3px solid #d8d5cc;
   letter-spacing: 0.2px;
 }
 
@@ -635,16 +719,19 @@ body {
   margin-bottom: 6px;
 }
 
+.info-list li:last-child {
+  margin-bottom: 0;
+}
+
 /* 인사이트 콜아웃 */
 .insight-callout {
-  background: #f0f7ff;
-  border-left: 4px solid #4a90e2;
-  color: #1a3a5c;
+  background: #f7f6f3;
+  border-left: 4px solid #d8d5cc;
+  color: #37352f;
   font-size: 0.91rem;
   font-weight: 500;
-  font-style: italic;
   line-height: 1.85;
-  margin: 2px 0 10px;
+  margin: 12px 0 0;
   padding: 12px 16px;
   border-radius: 0 6px 6px 0;
 }
@@ -662,9 +749,9 @@ body {
 .action-list li {
   position: relative;
   padding: 12px 16px 12px 40px;
-  background: #f8fbff;
-  border: 1px solid #dceaf8;
-  border-radius: 8px;
+  background: #fbfbfa;
+  border: 1px solid #e7e5df;
+  border-radius: 6px;
   font-size: 0.91rem;
   font-weight: 400;
   color: #2c3e50;
@@ -676,7 +763,7 @@ body {
   position: absolute;
   left: 15px;
   top: 13px;
-  color: #4a90e2;
+  color: #8b8b86;
   font-weight: 800;
   font-size: 0.9rem;
 }
@@ -736,7 +823,7 @@ body {
 =========================== */
 @media (max-width: 768px) {
   .hero-name {
-    font-size: 2.4rem;
+    font-size: 3.6rem;
   }
 
   .profile-img {
@@ -746,6 +833,27 @@ body {
 
   .section-padding {
     padding: 60px 0;
+  }
+
+  .portfolio-modal-header {
+    padding: 24px 24px 20px;
+  }
+
+  .portfolio-modal-body {
+    padding: 24px 22px 28px;
+  }
+
+  .portfolio-modal-title {
+    font-size: 1.28rem;
+  }
+
+  .impact-grid,
+  .two-column-block {
+    grid-template-columns: 1fr;
+  }
+
+  .impact-card {
+    min-height: auto;
   }
 }
 

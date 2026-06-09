@@ -15,29 +15,7 @@ window.addEventListener('scroll', () => {
 });
 
 // ===========================
-// 포트폴리오 필터
-// ===========================
-const filterBtns = document.querySelectorAll('.filter-btn');
-const portfolioItems = document.querySelectorAll('.portfolio-item');
-
-filterBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    filterBtns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-
-    const filter = btn.dataset.filter.toLowerCase();
-
-    portfolioItems.forEach(item => {
-      const categories = item.dataset.category.toLowerCase().split(' ');
-      if (filter === 'all' || categories.includes(filter)) {
-        item.classList.remove('hidden');
-      } else {
-        item.classList.add('hidden');
-      }
-    });
-  });
-});
-
+// Scroll Fade-in Animation
 // ===========================
 const observerOptions = {
   threshold: 0.1,
@@ -52,11 +30,135 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, observerOptions);
 
-// 애니메이션 대상 요소들
-document.querySelectorAll('.skill-card, .timeline-item, .portfolio-item').forEach(el => {
-  el.classList.add('fade-in');
-  observer.observe(el);
-});
+function observeFadeIn(elements) {
+  elements.forEach(el => {
+    el.classList.add('fade-in');
+    observer.observe(el);
+  });
+}
+
+observeFadeIn(document.querySelectorAll('.skill-card, .timeline-item'));
+
+// ===========================
+// 포트폴리오 데이터 렌더링
+// ===========================
+const PROJECTS_DATA_URL = 'portfolio/projects.json';
+
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#039;');
+}
+
+function renderPortfolioCard(project) {
+  const categories = escapeHtml(project.categories.join(' '));
+  const tags = project.tags
+    .map(tag => `<span class="portfolio-tag">${escapeHtml(tag)}</span>`)
+    .join('');
+
+  return `
+        <div class="col-md-4 col-sm-6 mb-4 portfolio-item" data-category="${categories}">
+          <div class="portfolio-card" data-bs-toggle="modal" data-bs-target="#${escapeHtml(project.id)}" style="background-image: url('${escapeHtml(project.image)}'); background-size: cover; background-position: center;">
+            <div class="portfolio-overlay">
+              <div class="portfolio-tags">
+                ${tags}
+              </div>
+              <h6>${escapeHtml(project.title)}</h6>
+            </div>
+          </div>
+        </div>`;
+}
+
+function renderPortfolioModal(project, bodyHtml) {
+  return `
+  <div class="modal fade" id="${escapeHtml(project.id)}" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content portfolio-modal-content">
+        <div class="portfolio-modal-header">
+          <div class="portfolio-modal-tag">${escapeHtml(project.tag)}</div>
+          <h4 class="portfolio-modal-title">${escapeHtml(project.title)}</h4>
+          <button type="button" class="portfolio-modal-close" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="portfolio-modal-body">
+${bodyHtml}
+        </div>
+      </div>
+    </div>
+  </div>`;
+}
+
+function bindPortfolioFilters() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.dataset.filter.toLowerCase();
+
+      portfolioItems.forEach(item => {
+        const categories = item.dataset.category.toLowerCase().split(' ');
+        if (filter === 'all' || categories.includes(filter)) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+    });
+  });
+}
+
+function bindPortfolioModalScrollReset() {
+  document.querySelectorAll('.modal').forEach(modal => {
+    modal.addEventListener('shown.bs.modal', () => {
+      const modalBody = modal.querySelector('.portfolio-modal-body');
+      if (modalBody) modalBody.scrollTop = 0;
+    });
+  });
+}
+
+async function loadProjectBody(project) {
+  const response = await fetch(project.body);
+  if (!response.ok) {
+    throw new Error(`Failed to load ${project.body}`);
+  }
+  return response.text();
+}
+
+async function renderPortfolio() {
+  const grid = document.getElementById('portfolio-grid');
+  const modals = document.getElementById('portfolio-modals');
+  if (!grid || !modals) return;
+
+  try {
+    const response = await fetch(PROJECTS_DATA_URL);
+    if (!response.ok) {
+      throw new Error(`Failed to load ${PROJECTS_DATA_URL}`);
+    }
+
+    const projects = await response.json();
+    const bodies = await Promise.all(projects.map(loadProjectBody));
+
+    grid.innerHTML = projects.map(renderPortfolioCard).join('');
+    modals.innerHTML = projects
+      .map((project, index) => renderPortfolioModal(project, bodies[index]))
+      .join('');
+
+    bindPortfolioFilters();
+    bindPortfolioModalScrollReset();
+    observeFadeIn(document.querySelectorAll('.portfolio-item'));
+  } catch (error) {
+    console.error(error);
+    grid.innerHTML = '<p class="portfolio-load-error">포트폴리오를 불러오지 못했습니다.</p>';
+  }
+}
+
+renderPortfolio();
 
 // ===========================
 // 경력 기간 자동 계산
