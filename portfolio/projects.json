@@ -4,6 +4,7 @@
     "slug": "business-insight-report",
     "title": "비즈니스 인사이트 리포트",
     "tag": "Insight",
+    "company": "코스맥스",
     "categories": [
       "insight"
     ],
@@ -18,6 +19,7 @@
     "slug": "formulation-automation",
     "title": "LLM 기반 Formulation 자동화",
     "tag": "LLM · Analysis",
+    "company": "코스맥스",
     "categories": [
       "llm",
       "analysis"
@@ -34,6 +36,7 @@
     "slug": "research-trend-analysis",
     "title": "학술 대회 연구 트렌드 분석",
     "tag": "Analysis",
+    "company": "코스맥스",
     "categories": [
       "analysis"
     ],
@@ -48,6 +51,7 @@
     "slug": "vector-search-structure",
     "title": "LLM & vector 유사도 기반 자료 검색 구조 설계",
     "tag": "LLM · Analysis",
+    "company": "코스맥스",
     "categories": [
       "llm",
       "analysis"
@@ -64,6 +68,7 @@
     "slug": "global-lab-kpi-ssot",
     "title": "글로벌 연구소 법인 KPI 측정을 위한 SSOT 설계",
     "tag": "Analysis",
+    "company": "코스맥스",
     "categories": [
       "analysis"
     ],

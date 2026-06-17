@@ -426,6 +426,43 @@ body {
   letter-spacing: 0.3px;
 }
 
+/* 회사별 섹션 */
+.portfolio-company-section {
+  margin-bottom: 48px;
+}
+
+.portfolio-company-section.hidden {
+  display: none;
+}
+
+.portfolio-company-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.portfolio-company-header::before,
+.portfolio-company-header::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #d0d8e8;
+}
+
+.portfolio-company-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #4a90e2;
+  background: #eaf2fb;
+  border: 1.5px solid #c2d9f5;
+  border-radius: 20px;
+  padding: 4px 18px;
+  white-space: nowrap;
+}
+
 /* 필터 숨김 애니메이션 */
 .portfolio-item {
   transition: opacity 0.3s, transform 0.3s;

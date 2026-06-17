@@ -72,6 +72,19 @@ function renderPortfolioCard(project) {
         </div>`;
 }
 
+function renderCompanySection(company, projects) {
+  const cards = projects.map(renderPortfolioCard).join('');
+  return `
+    <div class="portfolio-company-section" data-company="${escapeHtml(company)}">
+      <div class="portfolio-company-header">
+        <span class="portfolio-company-label">${escapeHtml(company)}</span>
+      </div>
+      <div class="row portfolio-company-grid">
+        ${cards}
+      </div>
+    </div>`;
+}
+
 function renderPortfolioModal(project, bodyHtml) {
   return `
   <div class="modal fade" id="${escapeHtml(project.id)}" tabindex="-1">
@@ -92,7 +105,6 @@ ${bodyHtml}
 
 function bindPortfolioFilters() {
   const filterBtns = document.querySelectorAll('.filter-btn');
-  const portfolioItems = document.querySelectorAll('.portfolio-item');
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -101,13 +113,21 @@ function bindPortfolioFilters() {
 
       const filter = btn.dataset.filter.toLowerCase();
 
-      portfolioItems.forEach(item => {
-        const categories = item.dataset.category.toLowerCase().split(' ');
-        if (filter === 'all' || categories.includes(filter)) {
-          item.classList.remove('hidden');
-        } else {
-          item.classList.add('hidden');
-        }
+      document.querySelectorAll('.portfolio-company-section').forEach(section => {
+        const items = section.querySelectorAll('.portfolio-item');
+        let visibleCount = 0;
+
+        items.forEach(item => {
+          const categories = item.dataset.category.toLowerCase().split(' ');
+          if (filter === 'all' || categories.includes(filter)) {
+            item.classList.remove('hidden');
+            visibleCount++;
+          } else {
+            item.classList.add('hidden');
+          }
+        });
+
+        section.classList.toggle('hidden', visibleCount === 0);
       });
     });
   });
@@ -144,7 +164,22 @@ async function renderPortfolio() {
     const projects = await response.json();
     const bodies = await Promise.all(projects.map(loadProjectBody));
 
-    grid.innerHTML = projects.map(renderPortfolioCard).join('');
+    // 회사별로 그룹핑 (JSON 순서 유지)
+    const companiesOrder = [];
+    const byCompany = {};
+    projects.forEach(project => {
+      const company = project.company || '기타';
+      if (!byCompany[company]) {
+        byCompany[company] = [];
+        companiesOrder.push(company);
+      }
+      byCompany[company].push(project);
+    });
+
+    grid.innerHTML = companiesOrder
+      .map(company => renderCompanySection(company, byCompany[company]))
+      .join('');
+
     modals.innerHTML = projects
       .map((project, index) => renderPortfolioModal(project, bodies[index]))
       .join('');
