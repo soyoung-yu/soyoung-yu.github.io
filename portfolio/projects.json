@@ -47,55 +47,19 @@
     "body": "portfolio/projects/research-trend-analysis.html"
   },
   {
-    "id": "modal6",
-    "slug": "wind-power-prediction",
-    "title": "발전기 센서 데이터 기반 풍력 발전량 예측 모델 개발",
-    "tag": "ML · Analysis",
-    "company": "펜타시스템테크놀러지",
+    "id": "modal5",
+    "slug": "global-lab-kpi-ssot",
+    "title": "글로벌 연구소 법인 KPI 측정을 위한 SSOT 설계",
+    "tag": "Analysis",
+    "company": "코스맥스",
     "categories": [
-      "ml",
       "analysis"
     ],
     "tags": [
-      "ML",
       "Analysis"
     ],
-    "image": "images/portfolio6.png",
-    "body": "portfolio/projects/wind-power-prediction.html"
-  },
-  {
-    "id": "modal8",
-    "slug": "crime-prediction",
-    "title": "범죄 데이터 기반 2차 범죄 발생 가능성 예측 모델 개발",
-    "tag": "ML · Analysis",
-    "company": "펜타시스템테크놀러지",
-    "categories": [
-      "ml",
-      "analysis"
-    ],
-    "tags": [
-      "ML",
-      "Analysis"
-    ],
-    "image": "images/portfolio8.png",
-    "body": "portfolio/projects/crime-prediction.html"
-  },
-  {
-    "id": "modal7",
-    "slug": "ultrasonic-defect-detection",
-    "title": "제조 공정에서의 초음파 검사 이미지 결함 검출 모델 개발",
-    "tag": "ML · Analysis",
-    "company": "펜타시스템테크놀러지",
-    "categories": [
-      "ml",
-      "analysis"
-    ],
-    "tags": [
-      "ML",
-      "Analysis"
-    ],
-    "image": "images/portfolio7.png",
-    "body": "portfolio/projects/ultrasonic-defect-detection.html"
+    "image": "images/portfolio5.png",
+    "body": "portfolio/projects/global-lab-kpi-ssot.html"
   },
   {
     "id": "modal4",
@@ -116,18 +80,54 @@
     "body": "portfolio/projects/vector-search-structure.html"
   },
   {
-    "id": "modal5",
-    "slug": "global-lab-kpi-ssot",
-    "title": "글로벌 연구소 법인 KPI 측정을 위한 SSOT 설계",
-    "tag": "Analysis",
-    "company": "코스맥스",
+    "id": "modal6",
+    "slug": "wind-power-prediction",
+    "title": "발전기 센서 데이터 기반 풍력 발전량 예측 모델 개발",
+    "tag": "ML · Analysis",
+    "company": "펜타시스템테크놀러지",
     "categories": [
+      "ml",
       "analysis"
     ],
     "tags": [
+      "ML",
       "Analysis"
     ],
-    "image": "images/portfolio5.png",
-    "body": "portfolio/projects/global-lab-kpi-ssot.html"
+    "image": "images/portfolio6.png",
+    "body": "portfolio/projects/wind-power-prediction.html"
+  },
+  {
+    "id": "modal7",
+    "slug": "ultrasonic-defect-detection",
+    "title": "제조 공정에서의 초음파 검사 이미지 결함 검출 모델 개발",
+    "tag": "ML · Analysis",
+    "company": "펜타시스템테크놀러지",
+    "categories": [
+      "ml",
+      "analysis"
+    ],
+    "tags": [
+      "ML",
+      "Analysis"
+    ],
+    "image": "images/portfolio7.png",
+    "body": "portfolio/projects/ultrasonic-defect-detection.html"
+  },
+  {
+    "id": "modal8",
+    "slug": "crime-prediction",
+    "title": "범죄 데이터 기반 2차 범죄 발생 가능성 예측 모델 개발",
+    "tag": "ML · Analysis",
+    "company": "펜타시스템테크놀러지",
+    "categories": [
+      "ml",
+      "analysis"
+    ],
+    "tags": [
+      "ML",
+      "Analysis"
+    ],
+    "image": "images/portfolio8.png",
+    "body": "portfolio/projects/crime-prediction.html"
   }
 ]
