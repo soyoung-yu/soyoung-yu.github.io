@@ -1,0 +1,67 @@
+<div class="portfolio-modal-info">
+  <div class="portfolio-modal-info-item">
+    <span class="info-label"><i class="fas fa-layer-group me-2"></i>기술 스택</span>
+    <div class="info-tags">
+      <span class="tech-tag">Python</span>
+      <span class="tech-tag">Scikit-Learn</span>
+      <span class="tech-tag">GridSearchCV</span>
+      <span class="tech-tag">HiveQL</span>
+      <span class="tech-tag">KoNLPy</span>
+    </div>
+  </div>
+  <div class="portfolio-modal-info-item">
+    <span class="info-label"><i class="fas fa-users me-2"></i>참여 규모</span>
+    <ul class="info-list">
+      <li>총 <span class="stat-em">2명</span> / 기여도 <span class="stat-em">80%</span></li>
+      <li>역할 : 데이터 EDA, 데이터 전처리, 모델 학습 및 튜닝</li>
+    </ul>
+  </div>
+  <div class="portfolio-modal-info-item">
+    <span class="info-label"><i class="fas fa-align-left me-2"></i>프로젝트 설명</span>
+    <p class="info-desc">범죄 피해자는 희망자에 한해서만 2차 범죄 보호조치를 받는 구조였습니다. 이 프로젝트는 피해자의 2차 범죄 발생 가능성을 사전에 예측하여, 보호조치 대상자에 대한 적절한 추가 조치를 가능하게 하는 것을 목표로 했습니다.</p>
+  </div>
+  <div class="portfolio-modal-info-item">
+    <span class="info-label"><i class="fas fa-chart-bar me-2"></i>수치 지표</span>
+    <ul class="info-list">
+      <li>Recall <span class="stat-em">0.712</span> 달성 (미검출 최소화 목표 기준)</li>
+    </ul>
+  </div>
+  <div class="portfolio-modal-info-item">
+    <span class="info-label"><i class="fas fa-bullseye me-2"></i>배경 및 목표</span>
+    <p class="info-desc">희망자 중심의 보호조치 체계에서는 실제 위험에 처한 피해자를 사전에 식별하기 어렵습니다. 피해자의 인적 정보, 범죄 기록, 보호조치 기록, 2차 피해 여부 데이터를 활용해 발생 가능성을 예측하고, 예측 결과를 일배치로 시스템에 적재하는 파이프라인까지 구축하는 것이 목표였습니다.</p>
+  </div>
+  <div class="portfolio-modal-info-item">
+    <span class="info-label"><i class="fas fa-database me-2"></i>데이터 수집 및 전처리</span>
+    <h6 class="info-subtitle">데이터</h6>
+    <ul class="info-list">
+      <li>범죄 피해자 인적 정보, 범죄 기록, 보호조치 기록, 2차 피해 여부</li>
+    </ul>
+    <h6 class="info-subtitle">범주형 컬럼 카테고리 축소</h6>
+    <ul class="info-list">
+      <li>직업, 국적, 관계 등 Cardinality가 큰 범주형 컬럼 정제 필요</li>
+      <li>KoNLPy 최빈 단어 기반 1차 축소 → 수작업 2차 축소</li>
+    </ul>
+    <h6 class="info-subtitle">주소 컬럼 보완</h6>
+    <ul class="info-list">
+      <li>수기 입력으로 인한 불완전 주소 데이터 정제</li>
+      <li>행정안전부 표준 데이터 기반 행정구역별 누락 주소 보완</li>
+      <li>상위 → 하위 행정구역 순 반복 추출로 중복 지역명 문제 해결</li>
+      <li>상세 주소 누락은 범주형 변수로 처리</li>
+    </ul>
+  </div>
+  <div class="portfolio-modal-info-item">
+    <span class="info-label"><i class="fas fa-flask me-2"></i>모델 설계 및 핵심 의사결정</span>
+    <ul class="info-list">
+      <li>여러 분류 모델 성능 비교 (Logistic Regression, Decision Tree, LightGBM, XGBoost, Random Forest)</li>
+      <li>신규 데이터 입력 시 일부 변수가 미입력 상태임을 고려, 특정 변수 의존도가 낮고 변수 중요도가 고르게 분포된 모델 선택</li>
+      <li>예측 결과를 일배치로 최종 테이블에 적재하는 파이프라인 구축</li>
+    </ul>
+  </div>
+  <div class="portfolio-modal-info-item">
+    <span class="info-label"><i class="fas fa-chart-line me-2"></i>결과 및 성과</span>
+    <ul class="info-list">
+      <li>Recall <span class="stat-em">0.712</span> 달성</li>
+      <li>일배치 파이프라인 연동으로 예측 결과 자동 적재 구조 구축</li>
+    </ul>
+  </div>
+</div>
