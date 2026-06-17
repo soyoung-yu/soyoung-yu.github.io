@@ -64,6 +64,23 @@
     "body": "portfolio/projects/wind-power-prediction.html"
   },
   {
+    "id": "modal7",
+    "slug": "ultrasonic-defect-detection",
+    "title": "제조 공정에서의 초음파 검사 이미지 결함 검출 모델 개발",
+    "tag": "ML · Analysis",
+    "company": "펜타시스템테크놀러지",
+    "categories": [
+      "ml",
+      "analysis"
+    ],
+    "tags": [
+      "ML",
+      "Analysis"
+    ],
+    "image": "images/portfolio1.png",
+    "body": "portfolio/projects/ultrasonic-defect-detection.html"
+  },
+  {
     "id": "modal4",
     "slug": "vector-search-structure",
     "disabled": true,
