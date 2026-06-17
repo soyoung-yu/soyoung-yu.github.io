@@ -47,6 +47,23 @@
     "body": "portfolio/projects/research-trend-analysis.html"
   },
   {
+    "id": "modal6",
+    "slug": "wind-power-prediction",
+    "title": "발전기 센서 데이터 기반 풍력 발전량 예측 모델 개발",
+    "tag": "ML · Analysis",
+    "company": "펜타시스템테크놀러지",
+    "categories": [
+      "ml",
+      "analysis"
+    ],
+    "tags": [
+      "ML",
+      "Analysis"
+    ],
+    "image": "images/portfolio1.png",
+    "body": "portfolio/projects/wind-power-prediction.html"
+  },
+  {
     "id": "modal4",
     "slug": "vector-search-structure",
     "disabled": true,

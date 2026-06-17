@@ -1,0 +1,76 @@
+<div class="portfolio-modal-info">
+  <div class="portfolio-modal-info-item">
+    <span class="info-label"><i class="fas fa-layer-group me-2"></i>기술 스택</span>
+    <div class="info-tags">
+      <span class="tech-tag">Python</span>
+      <span class="tech-tag">PyTorch</span>
+      <span class="tech-tag">VMD</span>
+      <span class="tech-tag">SHAP</span>
+      <span class="tech-tag">XGBoost</span>
+    </div>
+  </div>
+  <div class="portfolio-modal-info-item">
+    <span class="info-label"><i class="fas fa-users me-2"></i>참여 규모</span>
+    <ul class="info-list">
+      <li>총 <span class="stat-em">2명</span> / 기여도 <span class="stat-em">80%</span></li>
+      <li>역할 : 데이터 EDA, 데이터 전처리, 모델 튜닝 및 패키지화</li>
+    </ul>
+  </div>
+  <div class="portfolio-modal-info-item">
+    <span class="info-label"><i class="fas fa-align-left me-2"></i>프로젝트 설명</span>
+    <p class="info-desc">재생에너지 입찰 제도 개선으로 더 정밀한 발전량 예측이 요구되었습니다. 기존 모델은 풍속 기반으로 설계되어 있었는데, 개선된 입찰 제도에서 풍속의 큰 변동성은 비용에 직접 영향을 주는 리스크였습니다.</p>
+    <p class="desc-lead">이 프로젝트는 한 가지 질문에서 출발했습니다. "풍속 없이 발전량만으로 더 안정적인 예측이 가능한가?"</p>
+    <p class="info-desc">풍속 의존도를 제거하고 과거 발전량 기반 시계열 예측으로 접근 방식을 전환했습니다. 메인 모델에는 VMD 신호 분해 기법을 적용해 발전량 자체에서 특성을 학습하도록 했고, 발전기 내부 센서 데이터(온도, 방향, 각도)를 활용한 서브 모델로 메인 모델의 에러를 보정하는 2단 구조를 설계했습니다.</p>
+  </div>
+  <div class="portfolio-modal-info-item">
+    <span class="info-label"><i class="fas fa-chart-bar me-2"></i>수치 지표</span>
+    <ul class="info-list">
+      <li>기존 모델 NMAE 약 <span class="stat-em">12%</span> → 새 모델 NMAE 약 <span class="stat-em">4%</span> (약 8% 향상)</li>
+      <li>풍속 예측 단계 제거로 추론 런타임 단축</li>
+    </ul>
+  </div>
+  <div class="portfolio-modal-info-item">
+    <span class="info-label"><i class="fas fa-bullseye me-2"></i>배경 및 목표</span>
+    <p class="info-desc">재생에너지 입찰 제도 개선으로 발전량 예측 정확도가 직접적인 비용 리스크와 연결되었습니다. 풍속 변동성에 취약한 기존 모델을 대체하기 위해, 풍속에 의존하지 않는 새로운 예측 구조를 설계하는 것이 목표였습니다.</p>
+  </div>
+  <div class="portfolio-modal-info-item">
+    <span class="info-label"><i class="fas fa-database me-2"></i>데이터 수집 및 전처리</span>
+    <h6 class="info-subtitle">데이터</h6>
+    <ul class="info-list">
+      <li>과거 발전량 시계열 데이터</li>
+      <li>발전기 내부 센서 데이터 약 <span class="stat-em">65개</span> (온도, 각도, 방향 등 발전기 상태 관련)</li>
+    </ul>
+    <h6 class="info-subtitle">전처리 및 변수 선정</h6>
+    <ul class="info-list">
+      <li>센서 데이터 추이 및 분포 확인</li>
+      <li>센서 간 상관관계 분석</li>
+      <li>선형 회귀 f(x, 풍속)로 각 센서의 발전량 영향력 확인</li>
+      <li>SHAP Value로 변수 중요도 및 방향 확인 후 최종 변수 선정</li>
+    </ul>
+  </div>
+  <div class="portfolio-modal-info-item">
+    <span class="info-label"><i class="fas fa-flask me-2"></i>모델 설계 및 핵심 의사결정</span>
+    <h6 class="info-subtitle">메인 모델 (발전량 예측)</h6>
+    <ul class="info-list">
+      <li>풍속 제거 → 과거 발전량 단일 변수 기반 시계열 예측으로 전환</li>
+      <li>VMD(변동모드분해) 적용으로 발전량 신호에서 특성 학습</li>
+    </ul>
+    <h6 class="info-subtitle">서브 모델 (에러 보정)</h6>
+    <ul class="info-list">
+      <li>메인 모델 잔차에 센서 데이터를 변수로 추가한 보정 모델 구축</li>
+      <li>SHAP 기반 변수 선정으로 센서 의존도 최소화</li>
+    </ul>
+    <h6 class="info-subtitle">모듈화</h6>
+    <ul class="info-list">
+      <li>추론 / 학습 및 평가 / 시각화 모듈 분리</li>
+      <li>config 파일 기반 통합 관리 구조 구축</li>
+    </ul>
+  </div>
+  <div class="portfolio-modal-info-item">
+    <span class="info-label"><i class="fas fa-chart-line me-2"></i>결과 및 성과</span>
+    <ul class="info-list">
+      <li>기존 모델 대비 NMAE 약 <span class="stat-em">8%</span> 향상 (12% → 4%)</li>
+      <li>풍속 예측 → 발전량 예측의 2단계 추론 구조를 발전량 직접 예측 1단계로 축소, 런타임 개선</li>
+    </ul>
+  </div>
+</div>
