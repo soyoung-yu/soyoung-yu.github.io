@@ -3,32 +3,79 @@
     <span class="info-label"><i class="fas fa-layer-group me-2"></i>기술 스택</span>
     <div class="info-tags">
       <span class="tech-tag">Python</span>
-      <span class="tech-tag">Pandas</span>
-      <span class="tech-tag">Matplotlib</span>
+      <span class="tech-tag">PyMuPDF</span>
+      <span class="tech-tag">TF-IDF</span>
+      <span class="tech-tag">HDBSCAN</span>
+      <span class="tech-tag">UMAP</span>
     </div>
   </div>
   <div class="portfolio-modal-info-item">
     <span class="info-label"><i class="fas fa-align-left me-2"></i>프로젝트 설명</span>
-    <p class="info-desc">학술 대회 데이터를 기반으로 연구 주제와 키워드 흐름을 분석한 프로젝트입니다.</p>
+    <p class="info-desc">IFSCC 논문을 제출하는 연구 부서에서, 전체 논문 데이터를 기반으로 연구원들이 트렌드를 파악하고 다음 출원 주제를 발굴할 수 있도록 키워드 분석을 의뢰했습니다.</p>
+    <p class="info-desc">단순한 키워드 빈도 집계가 아닌, 카테고리별로 어떤 키워드들이 함께 등장하는지 군집화하여 연구 흐름의 맥락을 파악할 수 있도록 분석을 설계했습니다.</p>
+    <p class="info-desc">분석 결과는 사내 IFSCC 트렌드 발표, 사외 IFSCC 결과 발표에 활용되었으며, 직접 구축한 사내 IFSCC 논문 검색 사이트와 연결되어 클러스터 키워드를 검색어로 활용할 수 있도록 연동되었습니다.</p>
+  </div>
+  <div class="portfolio-modal-info-item">
+    <span class="info-label"><i class="fas fa-chart-bar me-2"></i>수치 지표</span>
+    <ul class="info-list">
+      <li>분석 대상 : 2025 IFSCC 전체 논문</li>
+      <li>총 <span class="stat-em">790편</span> / <span class="stat-em">15개</span> 세션 카테고리</li>
+      <li>카테고리별 클러스터링 결과 생성 (세션당 3~22개 클러스터)</li>
+    </ul>
   </div>
   <div class="portfolio-modal-info-item">
     <span class="info-label"><i class="fas fa-bullseye me-2"></i>배경 및 목표</span>
-    <p class="info-desc">연구 분야의 변화 방향과 반복적으로 등장하는 주제를 파악하는 것을 목표로 했습니다.</p>
+    <p class="info-desc">IFSCC는 화장품 과학 분야 최대 국제 학술대회로, 매 회차 수백 편의 논문이 발표됩니다. 연구원이 전체 논문을 직접 읽고 트렌드를 파악하는 데는 물리적 한계가 있었고, 분석가에게 키워드 기반 트렌드 분석이 의뢰되었습니다.</p>
+    <p class="goal-box">15개 카테고리별 연구 트렌드를 키워드 군집으로 시각화하고, 그 결과를 발표 자료와 논문 검색 사이트에 실제로 연결하는 것</p>
   </div>
   <div class="portfolio-modal-info-item">
     <span class="info-label"><i class="fas fa-database me-2"></i>데이터 수집 및 전처리</span>
-    <p class="info-desc">논문 제목, 초록, 키워드 등 분석 가능한 텍스트 정보를 정리했습니다.</p>
+    <h6 class="info-subtitle">데이터 수집</h6>
+    <ul class="info-list">
+      <li>2025 IFSCC 전체 논문 790편 PDF (연구원으로부터 직접 제공)</li>
+      <li>논문 메타데이터 엑셀 (논문번호, 논문명, 세션 주제, Podium 여부)</li>
+    </ul>
+    <h6 class="info-subtitle">전처리</h6>
+    <ul class="info-list">
+      <li>PyMuPDF로 PDF 텍스트 추출</li>
+      <li>메타데이터와 PDF 추출 데이터를 논문번호 기준으로 조인</li>
+      <li>영문 텍스트 정규화 (유니코드 정규화, 소문자 변환, 특수문자 제거)</li>
+      <li>불용어 제거 (일반 영문 불용어 + 논문 도메인 불용어 추가)</li>
+      <li>Bigram 포함 토큰화 (단일 키워드 + 2단어 연속 키워드 함께 추출)</li>
+      <li>min_df / max_df 기반 저빈도·고빈도 단어 필터링</li>
+      <li>TF-IDF 평균값 기준 상위 50% 키워드만 선별</li>
+    </ul>
   </div>
   <div class="portfolio-modal-info-item">
     <span class="info-label"><i class="fas fa-flask me-2"></i>분석 방법론</span>
-    <p class="info-desc">키워드 빈도, 기간별 변화, 주제 군집을 중심으로 트렌드를 확인했습니다.</p>
+    <h6 class="info-subtitle">TF-IDF 벡터화</h6>
+    <ul class="info-list">
+      <li>카테고리별 전체 문서 대상 TF-IDF 계산 (sublinear_tf 적용)</li>
+      <li>min_df / max_df 기반 저빈도·고빈도 키워드 필터링</li>
+      <li>키워드별 평균 TF-IDF 기준 상위 50% 키워드만 선별</li>
+      <li>단일 키워드 + Bigram 함께 활용</li>
+    </ul>
+    <h6 class="info-subtitle">클러스터링 (HDBSCAN)</h6>
+    <ul class="info-list">
+      <li>키워드 간 유사도를 코사인 거리로 계산</li>
+      <li>군집 수를 사전에 지정하지 않는 밀도 기반 클러스터링 적용</li>
+      <li>카테고리별 문서 수에 따라 min_cluster_size 동적 조정</li>
+      <li>밀도가 낮은 키워드는 노이즈(-1)로 분류·제외</li>
+    </ul>
+    <h6 class="info-subtitle">시각화 (UMAP)</h6>
+    <ul class="info-list">
+      <li>고차원 TF-IDF 벡터를 2D로 차원 축소</li>
+      <li>카테고리별 문서 수에 따라 n_neighbors, min_dist, spread 파라미터 조정</li>
+      <li>클러스터당 노출 키워드 수 제한 및 레이블 겹침 자동 조정 (adjustText)</li>
+      <li>노이즈 클러스터 제외 후 저장</li>
+    </ul>
   </div>
   <div class="portfolio-modal-info-item">
     <span class="info-label"><i class="fas fa-chart-line me-2"></i>분석 결과 및 인사이트</span>
-    <p class="info-desc">주요 연구 키워드의 변화와 관심 주제의 확장 흐름을 도출했습니다.</p>
+    <p class="info-desc placeholder-text">← 추후 추가 예정</p>
   </div>
   <div class="portfolio-modal-info-item">
     <span class="info-label"><i class="fas fa-lightbulb me-2"></i>비즈니스 제안 및 액션 아이템</span>
-    <p class="info-desc">후속 연구 및 기술 탐색 방향을 정하는 데 활용할 수 있는 관찰 결과를 정리했습니다.</p>
+    <p class="info-desc placeholder-text">← 추후 추가 예정</p>
   </div>
 </div>
