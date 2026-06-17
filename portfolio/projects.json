@@ -49,6 +49,7 @@
   {
     "id": "modal4",
     "slug": "vector-search-structure",
+    "disabled": true,
     "title": "LLM & vector 유사도 기반 자료 검색 구조 설계",
     "tag": "LLM · Analysis",
     "company": "코스맥스",

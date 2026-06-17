@@ -161,7 +161,8 @@ async function renderPortfolio() {
       throw new Error(`Failed to load ${PROJECTS_DATA_URL}`);
     }
 
-    const projects = await response.json();
+    const allProjects = await response.json();
+    const projects = allProjects.filter(p => !p.disabled);
     const bodies = await Promise.all(projects.map(loadProjectBody));
 
     // 회사별로 그룹핑 (JSON 순서 유지)
