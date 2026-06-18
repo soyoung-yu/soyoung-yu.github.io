@@ -11,7 +11,12 @@
 
   <div class="portfolio-modal-info-item">
     <span class="info-label"><i class="fas fa-align-left me-2"></i>프로젝트 설명</span>
-    <p class="desc-lead">연구원이 <strong>"나이아신아마이드 넣은 미백 에센스 만들어줘"</strong> 라고 입력하면, AI가 자사 처방 DB를 참고해 실험 가능한 처방 3가지를 자동으로 설계해주는 시스템</p>
+    <p class="info-desc">사내에는 수만 건의 처방 데이터가 축적되어 있음에도 불구하고, 이를 활용할 수 있는 체계가 부족했습니다. 이에 자연어 요구사항을 입력받아 자사 처방 데이터와 성분 지식을 기반으로 초기 처방 3안을 자동 생성하는 LLM 기반 시스템을 설계·구현하였습니다.</p>
+  </div>
+
+  <div class="portfolio-modal-info-item">
+    <span class="info-label"><i class="fas fa-star me-2"></i>최종 산출물</span>
+    <p class="desc-lead">연구원이 <strong>"나이아신아마이드 넣은 미백 에센스 만들어줘"</strong> 라고 입력하면,<br>AI가 자사 처방 DB를 참고해 실험 가능한 처방 3가지를 자동으로 설계해주는 시스템</p>
   </div>
 
   <div class="portfolio-modal-info-item">
@@ -33,19 +38,19 @@
     <ul class="info-list">
       <li>주요 항목 : 벌크코드, 성분명, 함량, 성분 역할</li>
       <li>기간 : 2025-01-01 ~ 2026-05-31</li>
-      <li>데이터 수 : 에센스 <span class="stat-em">290건</span> (bulk_code 기준)</li>
+      <li>데이터 수 : 에센스 <span class="stat-em">290건</span></li>
     </ul>
     <p class="info-sub-label">[자사 마케팅 키워드] 자사 처방과 연결된 외부 플랫폼 데이터</p>
     <ul class="info-list">
       <li>주요 항목 : 벌크코드, 마케팅 키워드, 사용감 키워드</li>
       <li>기간 : 2023-04-01 ~ 2026-05-31</li>
-      <li>데이터 수 : 에센스 <span class="stat-em">166건</span> (bulk_code 기준)</li>
+      <li>데이터 수 : 에센스 <span class="stat-em">166건</span></li>
     </ul>
     <p class="info-sub-label">[타사 전성분] 외부 플랫폼 데이터</p>
     <ul class="info-list">
       <li>주요 항목 : 제품명, 전성분</li>
       <li>기간 : 2023-04-01 ~ 2026-05-31</li>
-      <li>데이터 수 : 에센스 <span class="stat-em">2,003건</span> (product_id 기준)</li>
+      <li>데이터 수 : 에센스 <span class="stat-em">2,003건</span></li>
     </ul>
     <h6 class="info-subtitle">데이터 전처리</h6>
     <ul class="info-list">
@@ -60,29 +65,75 @@
 
     <h6 class="info-subtitle">1단계 — 데이터 준비</h6>
     <ul class="info-list">
-      <li>자사 처방 데이터 로드 및 성분별 통계치 계산 (사용 처방 수, 비율, 평균, 표준편차, 최솟값, 최댓값, 중앙값, p25, p75)</li>
+      <li>자사 처방 데이터 로드 및 성분별 통계치 계산
+        <ul>
+          <li>사용 처방 수, 비율, 평균, 표준편차, 최솟값, 최댓값, 중앙값, p25, p75</li>
+        </ul>
+      </li>
       <li>자사 마케팅 키워드, 타사 전성분 데이터 로드</li>
     </ul>
 
     <h6 class="info-subtitle">2단계 — 질의 분석</h6>
     <ul class="info-list">
-      <li>[Python 정확 매칭] 성분명 · 마케팅 키워드 · 함량(regex) 추출, ALIAS_HINTS 기반 관용명 매칭 (예: <code>시카</code> → 병풀추출물)</li>
-      <li>[LLM 1회 호출] 타겟 제품명 추출, Python이 놓친 성분·키워드 보완, 성분-함량 1:1 매핑</li>
-      <li>[Python 정확 매칭 2] 타겟 제품명으로 자사 처방 → 타사 제품 순서로 DB 탐색</li>
+      <li>[Python 정확 매칭]
+        <ul>
+          <li>성분명 · 마케팅 키워드 · 함량 추출</li>
+          <li>ALIAS_HINTS 기반 관용명 매칭 (예: <code>시카</code> → 병풀추출물)</li>
+        </ul>
+      </li>
+      <li>[LLM 1회 호출]
+        <ul>
+          <li>타겟 제품명 추출</li>
+          <li>Python이 놓친 성분·키워드 보완</li>
+          <li>성분-함량 1:1 매핑</li>
+        </ul>
+      </li>
+      <li>[Python 정확 매칭 2]
+        <ul>
+          <li>타겟 제품명으로 자사 처방 → 타사 제품 순서로 DB 탐색</li>
+        </ul>
+      </li>
     </ul>
 
     <h6 class="info-subtitle">3단계 — 컨텍스트 구성</h6>
     <ul class="info-list">
-      <li>유사 처방 탐색 : 마케팅 키워드 매칭 처방 (그룹 A, 최대 3건) + 성분 매칭 처방 (그룹 B, 최대 3건)</li>
-      <li>성분 통계 배정 : base 구조 성분 top 15 / 질의 성분 1순위 / 타겟·유사 처방 성분 2·3순위 / 범용 활성 성분 4순위</li>
-      <li>허용 성분 목록 : 자사 처방 DB 내 미배정 성분 전체 제공</li>
+      <li>유사 처방 탐색
+        <ul>
+          <li>그룹 A : 마케팅 키워드 매칭 처방 (최대 3건)</li>
+          <li>그룹 B : 성분 매칭 처방 (최대 3건)</li>
+        </ul>
+      </li>
+      <li>성분 통계 배정
+        <ul>
+          <li>base 구조 성분 top 15</li>
+          <li>질의 성분 1순위 / 타겟·유사 처방 성분 2·3순위 / 범용 활성 성분 4순위</li>
+        </ul>
+      </li>
+      <li>허용 성분 목록
+        <ul>
+          <li>자사 처방 DB 내 미배정 성분 전체 제공</li>
+        </ul>
+      </li>
     </ul>
 
     <h6 class="info-subtitle">4단계 — LLM 호출</h6>
     <ul class="info-list">
-      <li>타겟 처방 정보 · 성분 통계 · 유사 처방 · 허용 성분 목록 · 연구원 노하우 · 3안 설계 지침을 프롬프트로 조립</li>
-      <li>AWS Bedrock Claude에게 처방 3안을 JSON으로 생성 요청</li>
-      <li>Formula A: 심플·집중 효능 / Formula B: 올라운드 실용 처방 / Formula C: 프리미엄·차별화</li>
+      <li>정리된 데이터를 프롬프트로 조립
+        <ul>
+          <li>타겟 처방 정보</li>
+          <li>성분 통계</li>
+          <li>유사 처방</li>
+          <li>허용 성분 목록</li>
+          <li>연구원 노하우</li>
+        </ul>
+      </li>
+      <li>AWS Bedrock Claude에게 처방 3안을 JSON으로 생성 요청
+        <ul>
+          <li>Formula A : 심플·집중 효능</li>
+          <li>Formula B : 올라운드 실용 처방</li>
+          <li>Formula C : 프리미엄·차별화</li>
+        </ul>
+      </li>
     </ul>
 
     <h6 class="info-subtitle">5단계 — 검증 및 보정</h6>
