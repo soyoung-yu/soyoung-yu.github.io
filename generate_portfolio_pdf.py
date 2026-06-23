@@ -318,6 +318,19 @@ with open(os.path.join(BASE_DIR, "portfolio/projects.json"), encoding="utf-8") a
     projects = json.load(f)
 active = [p for p in projects if not p.get("disabled")]
 
+# Custom order for this PDF export
+CUSTOM_ORDER = [
+    "global-lab-kpi-ssot",
+    "business-insight-report",
+    "suncare-tf-dashboard",
+    "formulation-automation",
+    "research-trend-analysis",
+    "wind-power-prediction",
+    "ultrasonic-defect-detection",
+]
+slug_to_project = {p["slug"]: p for p in active}
+active = [slug_to_project[s] for s in CUSTOM_ORDER if s in slug_to_project]
+
 companies = []
 company_map = {}
 for p in active:
@@ -328,7 +341,7 @@ for p in active:
     company_map[c].append(p)
 
 # --- PDF ---
-output_path = os.path.join(os.path.expanduser("~/Desktop"), "portfolio_soyoung.pdf")
+output_path = os.path.join(os.path.expanduser("~/Desktop"), "유소영_포트폴리오_260623.pdf")
 
 LEFT = RIGHT = 18*mm
 TOP = BOT = 18*mm

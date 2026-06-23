@@ -114,6 +114,23 @@
     "body": "portfolio/projects/ultrasonic-defect-detection.html"
   },
   {
+    "id": "modal9",
+    "slug": "suncare-tf-dashboard",
+    "title": "선케어 TF 트렌드 대시보드 구축",
+    "tag": "Insight · BI",
+    "company": "코스맥스",
+    "categories": [
+      "insight",
+      "bi"
+    ],
+    "tags": [
+      "Insight",
+      "BI"
+    ],
+    "image": "images/portfolio9.png",
+    "body": "portfolio/projects/suncare-tf-dashboard.html"
+  },
+  {
     "id": "modal8",
     "slug": "crime-prediction",
     "title": "범죄 데이터 기반 2차 범죄 발생 가능성 예측 모델 개발",

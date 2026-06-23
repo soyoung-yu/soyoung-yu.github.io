@@ -1,0 +1,125 @@
+<div class="portfolio-modal-info">
+  <div class="portfolio-modal-info-item">
+    <span class="info-label"><i class="fas fa-layer-group me-2"></i>기술 스택</span>
+    <div class="info-tags">
+      <span class="tech-tag">Python</span>
+      <span class="tech-tag">SQL</span>
+      <span class="tech-tag">AWS Lambda</span>
+      <span class="tech-tag">AWS Athena</span>
+      <span class="tech-tag">AWS S3</span>
+      <span class="tech-tag">Apache Superset</span>
+    </div>
+  </div>
+  <div class="portfolio-modal-info-item">
+    <span class="info-label"><i class="fas fa-users me-2"></i>참여 규모</span>
+    <p class="info-desc">총 1명 / 기여도 100%</p>
+    <p class="info-desc">역할 : 니즈 수집·인터뷰, 데이터마트 설계, 파이프라인 구현, 대시보드 기획 및 구현 전 과정 단독 수행</p>
+  </div>
+  <div class="portfolio-modal-info-item">
+    <span class="info-label"><i class="fas fa-align-left me-2"></i>프로젝트 설명</span>
+    <p class="desc-lead">전략마케팅 담당자들이 선케어 시장을 파악하려면 직접 올리브영 플랫폼을 방문해 수작업으로 데이터를 수집해야 했습니다. 축적된 이력도 없고, 세부 제형별 비교도 어려운 구조였습니다.</p>
+    <p class="info-desc">인사이트 리포트를 통해 선케어 세부 제형 데이터를 접한 전략마케팅팀이 먼저 연락을 해왔고, 니즈를 상세히 인터뷰한 결과 세부 제형별 랭킹·트렌드를 주기적으로 모니터링하는 체계가 필요하다는 것을 확인했습니다.</p>
+    <div class="impact-grid">
+      <div class="impact-card">
+        <span class="impact-value">7개</span>
+        <span class="impact-label">세부 제형 분류 체계 구축</span>
+      </div>
+      <div class="impact-card">
+        <span class="impact-value">6명</span>
+        <span class="impact-label">선케어 TF 핵심 사용 대상</span>
+      </div>
+      <div class="impact-card">
+        <span class="impact-value">연 8회+</span>
+        <span class="impact-label">전략 보고·PT 활용</span>
+      </div>
+      <div class="impact-card">
+        <span class="impact-value">매주</span>
+        <span class="impact-label">자동 배치 파이프라인 운영</span>
+      </div>
+    </div>
+    <p class="info-desc">가장 핵심적인 성과는 기존 중분류 기준 데이터에 존재하지 않았던 <span class="highlight-phrase">세부 제형 분류 체계를 직접 설계</span>한 것입니다. 이를 통해 선크림·선세럼·선스틱·선쿠션 등 7개 제형별 랭킹·트렌드를 즉각적으로 비교할 수 있게 되었고, <span class="highlight-phrase">전략적품목보고회·임원회의·고객사 제안 PT 등 주요 의사결정 자리</span>에서 활용되는 분석 환경이 구축되었습니다.</p>
+  </div>
+  <div class="portfolio-modal-info-item">
+    <span class="info-label"><i class="fas fa-bullseye me-2"></i>배경 및 목표</span>
+    <p class="goal-box">시장 동향 파악을 위한 반복적인 수작업 데이터 수집을 제거하고, 세부 제형·톤업 여부·유무기 구분 등 전략적 관점의 필터를 갖춘 BI 대시보드를 구축하여 <span class="highlight-phrase">전략 조직이 언제든지 시장 현황을 스스로 분석할 수 있는 환경</span>을 만드는 것이 목표였습니다.</p>
+  </div>
+  <div class="portfolio-modal-info-item">
+    <span class="info-label"><i class="fas fa-database me-2"></i>데이터 수집 및 전처리</span>
+    <h6 class="info-subtitle">데이터 수집</h6>
+    <ul class="info-list">
+      <li>올리브영 선케어 제품 메타데이터 (제품명, 브랜드, 제조사, 등록일 등)</li>
+      <li>랭킹 데이터 (판매랭킹, 인기랭킹)</li>
+      <li>리뷰 데이터 (리뷰 수, 리뷰 키워드)</li>
+      <li>제품 상세페이지 키워드 (마케팅 효능 키워드)</li>
+      <li>전성분 데이터 (유무기 자차 성분 판별 목적)</li>
+    </ul>
+    <h6 class="info-subtitle">전처리 및 분류 체계 설계</h6>
+    <ul class="info-list">
+      <li>원본 데이터의 중분류 기준을 제품명 기반 세부 제형 7개로 재분류</li>
+      <li>제품명에서 톤업 여부 자동 추출</li>
+      <li>전성분 데이터에서 유기·무기·유무기 혼합 자차 성분 포함 여부 기반으로 UV 유형 분류</li>
+      <li>수집 시점별 최신 기준 메타데이터 구성 및 중복 제거</li>
+      <li>제품 단위 집계 지표(평균 랭킹, 리뷰 수 등) 생성</li>
+    </ul>
+    <h6 class="info-subtitle">데이터 파이프라인 설계</h6>
+    <p class="info-sub-label">자동화 파이프라인 구축</p>
+    <ul class="info-list">
+      <li>AWS Lambda 기반 데이터마트 생성 파이프라인 구현</li>
+      <li>매주 목요일 오전 6시 자동 배치 스케줄링</li>
+      <li>가공된 데이터셋을 S3 → Athena 구조로 적재</li>
+    </ul>
+    <p class="info-sub-label">데이터마트 구성</p>
+    <ul class="info-list">
+      <li><strong>oliveyoung_product_meta</strong> : 제품 메타·랭킹 정보 통합 테이블</li>
+      <li><strong>oliveyoung_keyword</strong> : 마케팅 효능 및 리뷰 키워드 테이블</li>
+      <li>대시보드 차트별 필터 조건을 반영한 파생 테이블 다수 설계</li>
+    </ul>
+  </div>
+  <div class="portfolio-modal-info-item">
+    <span class="info-label"><i class="fas fa-tachometer-alt me-2"></i>대시보드 설계</span>
+    <h6 class="info-subtitle">필터 설계</h6>
+    <ul class="info-list">
+      <li><strong>기간 필터 (Start_Date / End_Date)</strong>: 사용자가 원하는 기간으로 전체 차트 동기화</li>
+      <li><strong>세부 제형 필터</strong>: 선크림·선세럼·선스틱 등 7개 유형 단독/복합 선택 가능</li>
+      <li>톤업 여부, UV 유형(유기·무기·유무기) 필터 구성</li>
+      <li>필터 간 크로스 필터링이 의도에 맞게 작동하도록 Superset 데이터셋 구조 설계</li>
+    </ul>
+    <h6 class="info-subtitle">탭별 차트 구성</h6>
+    <ul class="info-list">
+      <li><strong>[선케어 현황]</strong> : 제형별·제조사별 제품 수 추이, 톤업 비중, UV 유형 분포</li>
+      <li><strong>[상위 랭킹 제품]</strong> : 인기랭킹·판매랭킹 TOP10 제품 및 제조사 분포</li>
+      <li><strong>[제품 상세페이지 키워드]</strong> : 마케팅 효능 키워드 분포 및 기간별 증감 비교</li>
+      <li><strong>[리뷰 키워드]</strong> : 소비자 리뷰 키워드 분포 및 기간별 증감 비교</li>
+      <li><strong>[전체 제품 리스트]</strong> : 필터 조건에 맞는 제품 전체 목록 조회</li>
+    </ul>
+    <h6 class="info-subtitle">키워드 비교 차트 설계</h6>
+    <ul class="info-list">
+      <li>Start_Date 시점과 End_Date 시점의 키워드 사용량 테이블을 나란히 배치하여 기간별 증감을 직관적으로 비교</li>
+      <li>두 테이블 간 크로스 필터 연동으로 특정 키워드 선택 시 관련 제품 목록 즉시 조회 가능</li>
+    </ul>
+  </div>
+  <div class="portfolio-modal-info-item">
+    <span class="info-label"><i class="fas fa-chart-line me-2"></i>분석 활용 사례</span>
+    <h6 class="info-subtitle">2025년 선케어 트렌드 분석</h6>
+    <ul class="info-list">
+      <li>선세럼이 2025년 4월을 기점으로 선스틱을 제품 수 기준으로 역전, 세부 제형 성장성 트렌드 파악</li>
+      <li>유무기 혼합 제품 비중이 연간 33.26% → 34.95%로 가장 크게 상승</li>
+      <li>톤업 제품 비중 16.63% → 20.25%로 꾸준한 성장 확인</li>
+    </ul>
+    <h6 class="info-subtitle">키워드 트렌드 분석</h6>
+    <ul class="info-list">
+      <li>효능 키워드 중 '톤업' 언급량이 1월 대비 63% 급등 (3,450 → 5,620)</li>
+      <li>리뷰 키워드 '부담' 언급량 약 2배 상승 (636 → 1,350), 키워드 클릭으로 실제 리뷰 맥락 즉시 확인 가능한 구조로 오해 방지</li>
+    </ul>
+    <p class="insight-callout">세부 제형 분류 체계가 없었다면 보이지 않았을 트렌드를 데이터로 포착하고, 전략 의사결정에 직접 활용되는 분석 환경을 구축</p>
+  </div>
+  <div class="portfolio-modal-info-item">
+    <span class="info-label"><i class="fas fa-lightbulb me-2"></i>비즈니스 기여</span>
+    <ul class="info-list">
+      <li>전략마케팅팀의 전략품목보고회(연 2회), 임원회의(연 2회), 고객사 제안 PT(연 4회)에서 활용되는 분석 환경 구축</li>
+      <li>핵심 사용 대상 선케어 TF 약 6명이 주도적으로 활용하며, 선케어 연구소·영업 등 관련 이해관계자가 필요 시 조회하는 구조</li>
+      <li>담당자가 직접 플랫폼을 방문해 수작업으로 데이터를 수집하던 방식을 <span class="highlight-phrase">대시보드 기반 셀프서비스 분석 구조</span>로 전환</li>
+      <li>인사이트 리포트로 시작된 현업의 데이터 활용 수요가 <span class="highlight-phrase">대시보드 형태의 지속적인 분석 서비스로 확장</span>된 사례</li>
+    </ul>
+  </div>
+</div>
