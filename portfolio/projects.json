@@ -114,6 +114,23 @@
     "body": "portfolio/projects/ultrasonic-defect-detection.html"
   },
   {
+    "id": "modal10",
+    "slug": "report-automation-agent",
+    "title": "인사이트 리포팅 자동화 (AI Agent 기반)",
+    "tag": "Insight · LLM",
+    "company": "코스맥스",
+    "categories": [
+      "insight",
+      "llm"
+    ],
+    "tags": [
+      "Insight",
+      "LLM"
+    ],
+    "image": "images/portfolio10.png",
+    "body": "portfolio/projects/report-automation-agent.html"
+  },
+  {
     "id": "modal9",
     "slug": "suncare-tf-dashboard",
     "title": "선케어 TF 트렌드 대시보드 구축",
