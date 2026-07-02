@@ -56,7 +56,7 @@ S = {
     # project title style (used inside callout box)
     "project_title": ps("project_title", B,  14, colors.white,                   22, spaceAfter=2),
     "project_tag":   ps("project_tag",   R,   8, colors.HexColor("#c0b8ff"),      13, spaceAfter=0),
-    "section_label": ps("section_label", SB,  9, PURPLE,                          14, spaceBefore=10, spaceAfter=4,
+    "section_label": ps("section_label", SB,  9, PURPLE,                          14, spaceBefore=4, spaceAfter=3,
                         leftIndent=L1),
     "body":          ps("body",          R,   9, GRAY,                            15, spaceAfter=4,   leftIndent=L2),
     "subtitle":      ps("subtitle",      B,   9, DARK,                            15, spaceBefore=6,  spaceAfter=3, leftIndent=L2),
@@ -166,10 +166,8 @@ def render_ul(ul_el):
 
 def section_header(text):
     return [
-        Spacer(1, 2),
         HRFlowable(width="100%", thickness=0.4, color=PURPLE_LIGHT, spaceAfter=0),
         Paragraph(f"<font color='#7c6aff'>◆</font>  {text}", S["section_label"]),
-        Spacer(1, 2),
     ]
 
 def render_info_item(item):
@@ -295,7 +293,7 @@ def build_project_flowables(project, page_width):
     out = []
     # Callout box for title
     out.append(CalloutBox(project["title"], project.get("tag", ""), page_width))
-    out.append(Spacer(1, 10))
+    out.append(Spacer(1, 6))
 
     body_path = project.get("body", "")
     body_html = ""
@@ -308,7 +306,6 @@ def build_project_flowables(project, page_width):
     soup = BeautifulSoup(body_html, "html.parser")
     for item in soup.find_all(class_="portfolio-modal-info-item"):
         out += render_info_item(item)
-        out.append(Spacer(1, 4))
 
     return out
 
@@ -320,13 +317,14 @@ active = [p for p in projects if not p.get("disabled")]
 
 # Custom order for this PDF export
 CUSTOM_ORDER = [
+    "suncare-tf-dashboard",
     "global-lab-kpi-ssot",
     "business-insight-report",
-    "suncare-tf-dashboard",
     "formulation-automation",
     "research-trend-analysis",
     "wind-power-prediction",
     "ultrasonic-defect-detection",
+    "crime-prediction",
 ]
 slug_to_project = {p["slug"]: p for p in active}
 active = [slug_to_project[s] for s in CUSTOM_ORDER if s in slug_to_project]
@@ -341,7 +339,7 @@ for p in active:
     company_map[c].append(p)
 
 # --- PDF ---
-output_path = os.path.join(os.path.expanduser("~/Desktop"), "유소영_포트폴리오_260623.pdf")
+output_path = os.path.join(os.path.expanduser("~/Desktop"), "유소영_포트폴리오_260624.pdf")
 
 LEFT = RIGHT = 18*mm
 TOP = BOT = 18*mm
