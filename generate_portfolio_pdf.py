@@ -317,14 +317,14 @@ active = [p for p in projects if not p.get("disabled")]
 
 # Custom order for this PDF export
 CUSTOM_ORDER = [
-    "suncare-tf-dashboard",
-    "global-lab-kpi-ssot",
-    "business-insight-report",
-    "formulation-automation",
-    "research-trend-analysis",
     "wind-power-prediction",
     "ultrasonic-defect-detection",
     "crime-prediction",
+    "formulation-automation",
+    "suncare-tf-dashboard",
+    "global-lab-kpi-ssot",
+    "research-trend-analysis",
+    "business-insight-report",
 ]
 slug_to_project = {p["slug"]: p for p in active}
 active = [slug_to_project[s] for s in CUSTOM_ORDER if s in slug_to_project]
@@ -339,7 +339,7 @@ for p in active:
     company_map[c].append(p)
 
 # --- PDF ---
-output_path = os.path.join(os.path.expanduser("~/Desktop"), "유소영_포트폴리오_260624.pdf")
+output_path = os.path.join(os.path.expanduser("~/Desktop"), "유소영_포트폴리오_260702.pdf")
 
 LEFT = RIGHT = 18*mm
 TOP = BOT = 18*mm
